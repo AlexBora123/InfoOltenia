@@ -41,12 +41,13 @@
         }
 
         svg{
-            height: 40vh;
+            height: 45vh;
         }
 
         *{
             overflow-y: hidden; /* Hide vertical scrollbar */
   overflow-x: hidden; /* Hide horizontal scrollbar */
+  color: black;
         }
     </style>
 </head>
@@ -59,11 +60,18 @@
         </a>
         <!-- Desktop Menu -->
         <ul class="hidden items-center gap-4 sm:flex">
-            <li><a href="#" class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white" aria-current="page">Products</a></li>
-            <li><a href="#" class="font-medium text-neutral-600 underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-neutral-400 dark:hover:text-white">Pricing</a></li>
-            <li><a href="#" class="font-medium text-neutral-600 underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-neutral-400 dark:hover:text-white">Blog</a></li>
-            <!-- CTA Button -->
-            <li><a href="#" class="rounded-none bg-black px-4 py-2 text-center text-sm font-medium tracking-wide text-neutral-100 hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Sign Up</a></li>
+            <li><a href="#" class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white" aria-current="page">Anunțuri</a></li>
+            <li><a href="#" class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white" aria-current="page">Comisie</a></li>
+            <li><a href="#" class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white" aria-current="page">Regulament</a></li>
+            <li><a href="#" class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white" aria-current="page">Organizatori</a></li>
+            <li><a href="#" class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white" aria-current="page">Participanți</a></li>
+
+            <li><a href="#" class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white" aria-current="page">Ziua 1</a></li>
+
+            <li><a href="#" class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white" aria-current="page">Ziua 2</a></li>
+
+            <li><a href="#" class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white" aria-current="page">Sponsori</a></li>
+
         </ul>
         <!-- Mobile Menu Button -->
         <button @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen" :class="mobileMenuIsOpen ? 'fixed top-6 right-6 z-20' : null" type="button" class="flex text-neutral-600 dark:text-neutral-400 sm:hidden" aria-label="mobile menu" aria-controls="mobileMenu">
