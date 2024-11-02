@@ -8,6 +8,10 @@
     <script src="https://cdn.jsdelivr.net/npm/kute.js@latest"></script>
     <title>InfoOltenia</title>
     <style>
+        body{
+            position: relative;
+            height: 100vh;
+        }
         @keyframes wave {
             0% {
                 transform: translateY(0);
@@ -44,6 +48,26 @@
             height: 45vh;
         }
 
+        #div1{
+            height: calc(99vh);
+            width: 80vw;
+            background-color: none;
+            position: absolute;
+            top: 34vh;
+            left:10vw ;
+            border-left: 1px dashed black;
+            border-right: 1px dashed black;
+            border-left: 1px dashed black;
+            border-top: 1px dashed black;
+            background-color: rgba(227, 223, 223, 0.334);
+            border-radius: 10%;
+        }
+
+        #info{
+            position: absolute;
+            overflow: scroll;
+        }
+
         *{
             overflow-y: hidden; /* Hide vertical scrollbar */
   overflow-x: hidden; /* Hide horizontal scrollbar */
@@ -55,7 +79,7 @@
     <nav x-data="{ mobileMenuIsOpen: false }" @click.away="mobileMenuIsOpen = false" class="flex items-center justify-between px-6 py-4" aria-label="penguin ui menu">
         <!-- Brand Logo -->
         <a href="#" class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
-            <span>InfoOltenia 2025</span>
+            <div id="info"><span>InfoOltenia 2025</span></div>
             <!-- <img src="./your-logo.svg" alt="brand logo" class="w-10" /> -->
         </a>
         <!-- Desktop Menu -->
@@ -109,6 +133,9 @@
             );
             tween.start();
         </script>
+    </div>
+    <div id="div1">
+        <h1>KAKKAK</h1>
     </div>
 </body>
 </html>
