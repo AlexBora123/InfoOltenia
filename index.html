@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,20 @@
     <script src="https://cdn.jsdelivr.net/npm/kute.js@latest"></script>
     <title>InfoOltenia</title>
     <style>
-        body{
+        body {
             position: relative;
             height: 100vh;
         }
+
         @keyframes wave {
             0% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(20px);
             }
+
             100% {
                 transform: translateY(0);
             }
@@ -28,100 +32,170 @@
             animation: wave 2s ease-in-out infinite;
         }
 
-        nav{
+        nav {
             position: relative;
-            overflow:-x hidden;
+            overflow: hidden;
             scrollbar-width: hidden;
             height: 5vw;
             z-index: 1;
         }
-        #blob{
+
+        #blob {
             position: relative;
             top: -8vw;
             right: 1vw;
             z-index: -1;
-            overflow:-x hidden;
+            overflow: hidden;
             scrollbar-width: hidden;
         }
 
-        svg{
+        svg {
             height: 45vh;
         }
 
-        #div1{
-            height: calc(99vh);
+        #cont {
+            height: auto;
             width: 80vw;
             background-color: none;
             position: absolute;
             top: 34vh;
-            left:10vw ;
-            border-left: 1px dashed black;
-            border-right: 1px dashed black;
-            border-left: 1px dashed black;
-            border-top: 1px dashed black;
+            left: 10vw;
+            padding: 3vh;
+            overflow-y: scroll;
             background-color: rgba(227, 223, 223, 0.334);
-            border-radius: 10%;
+            border-radius: 20px;
         }
 
-        #info{
-            position: absolute;
-            overflow: scroll;
+        #cont h4, #cont p {
+    font-weight: normal; /* This will set them back to normal weight */
+}
+
+        #info {
+            position: relative;
         }
 
-        *{
-            overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
-  color: black;
+        #txt {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
+
+        h4 {
+            font-size: 1.3rem !important;
+            line-height: 1.9;
+            font-style: oblique;
+        }
+
+        * {
+            overflow-x: hidden;
+            color: black;
+        }
+                    /* Hide download links on larger screens */
+                    @media (min-width: 768px) {
+                        .download-link {
+                            display: none; /* Hide on PC */
+                        }
+                    }
+                
+                    /* Show download links on smaller screens */
+                    @media (max-width: 767px) {
+                        .wp-block-file__embed{
+                            display: none;
+                        }
+                    }
+                    
     </style>
 </head>
-<body style="padding: 0%; margin: 0%;" class="absolute inset-0 h-full w-full bg-white bg-[linear-gradient(to_right,#80808012_2px,transparent_1px),linear-gradient(to_bottom,#80808012_2px,transparent_1px)] bg-[size:24px_24px]">
-    <nav x-data="{ mobileMenuIsOpen: false }" @click.away="mobileMenuIsOpen = false" class="flex items-center justify-between px-6 py-4" aria-label="penguin ui menu">
+
+<body x-data="{ logo: true, d1: false, d2: false, d3: false, d4: false, d5: false, d6: false, d7: false, d8: false,
+    sterge()
+    {
+        this.logo = false;   
+        this.d1 = false;this. d2 = false; this.d3 = false; this.d4 = false; this.d5 = false; this.d6 = false; this.d7 = false; this.d8 = false;
+    }
+ }" style="padding: 0%; margin: 0%;"
+    class="absolute inset-0 h-full w-full bg-white bg-[linear-gradient(to_right,#80808012_2px,transparent_1px),linear-gradient(to_bottom,#80808012_2px,transparent_1px)] bg-[size:24px_24px]">
+    <nav x-data="{ mobileMenuIsOpen: false }" @click.away="mobileMenuIsOpen = false"
+        class="flex items-center justify-between px-6 py-4" aria-label="penguin ui menu">
         <!-- Brand Logo -->
-        <a href="#" class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
+        <a href="#" class="text-2xl font-bold text-neutral-900 dark:text-neutral-100" @click="sterge(); logo=true;">
             <div id="info"><span>InfoOltenia 2025</span></div>
-            <!-- <img src="./your-logo.svg" alt="brand logo" class="w-10" /> -->
         </a>
         <!-- Desktop Menu -->
         <ul class="hidden items-center gap-4 sm:flex">
-            <li><a href="#" class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white" aria-current="page">Anunțuri</a></li>
-            <li><a href="#" class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white" aria-current="page">Comisie</a></li>
-            <li><a href="#" class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white" aria-current="page">Regulament</a></li>
-            <li><a href="#" class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white" aria-current="page">Organizatori</a></li>
-            <li><a href="#" class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white" aria-current="page">Participanți</a></li>
-
-            <li><a href="#" class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white" aria-current="page">Ziua 1</a></li>
-
-            <li><a href="#" class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white" aria-current="page">Ziua 2</a></li>
-
-            <li><a href="#" class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white" aria-current="page">Sponsori</a></li>
-
+            <li><a href="#"
+                    class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white"
+                    @click="sterge(); d1=true;">Anunțuri</a></li>
+            <li><a href="#"
+                    class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white"
+                    @click="sterge(); d2=true;">Comisie</a></li>
+            <li><a href="#"
+                    class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white"
+                    @click="sterge(); d3=true;">Regulament</a></li>
+            <li><a href="#"
+                    class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white"
+                    @click="sterge(); d4=true;">Organizatori</a></li>
+            <li><a href="#"
+                    class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white"
+                    @click="sterge(); d5=true;">Participanți</a></li>
+            <li><a href="#"
+                    class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white"
+                    @click="sterge(); d6=true;">Ziua 1</a></li>
+            <li><a href="#"
+                    class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white"
+                    @click="sterge(); d7=true;">Ziua 2</a></li>
+            <li><a href="#"
+                    class="font-bold text-black underline-offset-2 hover:text-black focus:outline-none focus:underline dark:text-white dark:hover:text-white"
+                    @click="sterge(); d8=true;">Sponsori</a></li>
         </ul>
         <!-- Mobile Menu Button -->
-        <button @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen" :class="mobileMenuIsOpen ? 'fixed top-6 right-6 z-20' : null" type="button" class="flex text-neutral-600 dark:text-neutral-400 sm:hidden" aria-label="mobile menu" aria-controls="mobileMenu">
-            <svg x-cloak x-show="!mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+        <button @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen"
+            :class="mobileMenuIsOpen ? 'fixed top-6 right-6 z-20' : null" type="button"
+            class="flex text-neutral-600 dark:text-neutral-400 sm:hidden" aria-label="mobile menu"
+            aria-controls="mobileMenu">
+            <svg x-cloak x-show="!mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
-            <svg x-cloak x-show="mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+            <svg x-cloak x-show="mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>
         </button>
         <!-- Mobile Menu -->
-        <ul x-cloak x-show="mobileMenuIsOpen" x-transition:enter="transition motion-reduce:transition-none ease-out duration-300" x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0" x-transition:leave="transition motion-reduce:transition-none ease-out duration-300" x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full" id="mobileMenu" class="fixed max-h-svh overflow-y-auto inset-x-0 top-0 z-10 flex flex-col divide-y divide-neutral-300 rounded-b-none bg-neutral-100 px-6 pb-6 pt-20 dark:divide-neutral-700 dark:bg-neutral-800 sm:hidden">
-            <li class="py-4"><a href="#" class="w-full text-lg font-bold text-black focus:underline dark:text-white" aria-current="page">Products</a></li>
-            <li class="py-4"><a href="#" class="w-full text-lg font-medium text-neutral-600 focus:underline dark:text-neutral-400">Pricing</a></li>
-            <li class="py-4"><a href="#" class="w-full text-lg font-medium text-neutral-600 focus:underline dark:text-neutral-400">Blog</a></li>
-            <!-- CTA Button -->
-            <li class="mt-4 w-full border-none"><a href="#" class="rounded-none bg-black px-4 py-2 block text-center font-medium tracking-wide text-neutral-100 hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:opacity-100 active:outline-offset-0 dark:bg-white dark:text-black dark:focus-visible:outline-white">Sign Up</a></li>
+        <ul x-cloak x-show="mobileMenuIsOpen"
+            x-transition:enter="transition motion-reduce:transition-none ease-out duration-300"
+            x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0"
+            x-transition:leave="transition motion-reduce:transition-none ease-out duration-300"
+            x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full" id="mobileMenu"
+            class="fixed max-h-svh overflow-y-auto inset-x-0 top-0 z-10 flex flex-col divide-y divide-neutral-300 rounded-b-none bg-neutral-100 px-6 pb-6 pt-20 dark:divide-neutral-700 dark:bg-neutral-800 sm:hidden">
+            <li @click="sterge(); d1=true;"class="py-4"><a href="#" class="w-full text-lg font-bold text-black focus:underline dark:text-white"aria-current="page">Anunțuri</a></li>
+            <li @click="sterge(); d2=true;"class="py-4"><a href="#" class="w-full text-lg font-bold text-black focus:underline dark:text-white"aria-current="page">Comisie</a></li>
+            <li @click="sterge(); d3=true;"class="py-4"><a href="#" class="w-full text-lg font-bold text-black focus:underline dark:text-white"aria-current="page">Regulament</a></li>
+            <li @click="sterge(); d4=true;"class="py-4"><a href="#" class="w-full text-lg font-bold text-black focus:underline dark:text-white"aria-current="page">Organizatori</a></li>
+            <li @click="sterge(); d5=true;"class="py-4"><a href="#" class="w-full text-lg font-bold text-black focus:underline dark:text-white"aria-current="page">Participanți</a></li>
+            <li @click="sterge(); d6=true;"class="py-4"><a href="#" class="w-full text-lg font-bold text-black focus:underline dark:text-white"aria-current="page">Ziua 1</a></li>
+            <li @click="sterge(); d7=true;"class="py-4"><a href="#" class="w-full text-lg font-bold text-black focus:underline dark:text-white"aria-current="page">Ziua 2</a></li>
+            <li @click="sterge(); d8=true;"class="py-4"><a href="#" class="w-full text-lg font-bold text-black focus:underline dark:text-white"aria-current="page">Sponsori</a></li>
+
         </ul>
     </nav>
-    
-    <div id = "blob" >
-        <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path id="blob1" stroke="#000" stroke-width="3" stroke-dasharray="5,5" fill="none" fill-opacity="1" d="M0,224L18.5,192C36.9,160,74,96,111,112C147.7,128,185,224,222,234.7C258.5,245,295,171,332,144C369.2,117,406,139,443,144C480,149,517,139,554,122.7C590.8,107,628,85,665,101.3C701.5,117,738,171,775,176C812.3,181,849,139,886,138.7C923.1,139,960,181,997,186.7C1033.8,192,1071,160,1108,176C1144.6,192,1182,256,1218,282.7C1255.4,309,1292,299,1329,282.7C1366.2,267,1403,245,1422,234.7L1440,224L1440,0L1421.5,0C1403.1,0,1366,0,1329,0C1292.3,0,1255,0,1218,0C1181.5,0,1145,0,1108,0C1070.8,0,1034,0,997,0C960,0,923,0,886,0C849.2,0,812,0,775,0C738.5,0,702,0,665,0C627.7,0,591,0,554,0C516.9,0,480,0,443,0C406.2,0,369,0,332,0C295.4,0,258,0,222,0C184.6,0,148,0,111,0C73.8,0,37,0,18,0L0,0Z"></path>
+
+    <div id="blob">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path id="blob1" stroke="#000" stroke-width="3" stroke-dasharray="5,5" fill="none" fill-opacity="1"
+                d="M0,224L18.5,192C36.9,160,74,96,111,112C147.7,128,185,224,222,234.7C258.5,245,295,171,332,144C369.2,117,406,139,443,144C480,149,517,139,554,122.7C590.8,107,628,85,665,101.3C701.5,117,738,171,775,176C812.3,181,849,139,886,138.7C923.1,139,960,181,997,186.7C1033.8,192,1071,160,1108,176C1144.6,192,1182,256,1218,282.7C1255.4,309,1292,299,1329,282.7C1366.2,267,1403,245,1422,234.7L1440,224L1440,0L1421.5,0C1403.1,0,1366,0,1329,0C1292.3,0,1255,0,1218,0C1181.5,0,1145,0,1108,0C1070.8,0,1034,0,997,0C960,0,923,0,886,0C849.2,0,812,0,775,0C738.5,0,702,0,665,0C627.7,0,591,0,554,0C516.9,0,480,0,443,0C406.2,0,369,0,332,0C295.4,0,258,0,222,0C184.6,0,148,0,111,0C73.8,0,37,0,18,0L0,0Z">
+            </path>
         </svg>
         <svg style="visibility:hidden;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path id="blob2" fill="#none" fill-opacity="1" d="M0,288L20,272C40,256,80,224,120,176C160,128,200,64,240,53.3C280,43,320,85,360,90.7C400,96,440,64,480,96C520,128,560,224,600,261.3C640,299,680,277,720,240C760,203,800,149,840,133.3C880,117,920,139,960,176C1000,213,1040,267,1080,261.3C1120,256,1160,192,1200,160C1240,128,1280,128,1320,149.3C1360,171,1400,213,1420,234.7L1440,256L1440,0L1420,0C1400,0,1360,0,1320,0C1280,0,1240,0,1200,0C1160,0,1120,0,1080,0C1040,0,1000,0,960,0C920,0,880,0,840,0C800,0,760,0,720,0C680,0,640,0,600,0C560,0,520,0,480,0C440,0,400,0,360,0C320,0,280,0,240,0C200,0,160,0,120,0C80,0,40,0,20,0L0,0Z"></path>
+            <path id="blob2" fill="#none" fill-opacity="1"
+                d="M0,288L20,272C40,256,80,224,120,176C160,128,200,64,240,53.3C280,43,320,85,360,90.7C400,96,440,64,480,96C520,128,560,224,600,261.3C640,299,680,277,720,240C760,203,800,149,840,133.3C880,117,920,139,960,176C1000,213,1040,267,1080,261.3C1120,256,1160,192,1200,160C1240,128,1280,128,1320,149.3C1360,171,1400,213,1420,234.7L1440,256L1440,0L1420,0C1400,0,1360,0,1320,0C1280,0,1240,0,1200,0C1160,0,1120,0,1080,0C1040,0,1000,0,960,0C920,0,880,0,840,0C800,0,760,0,720,0C680,0,640,0,600,0C560,0,520,0,480,0C440,0,400,0,360,0C320,0,280,0,240,0C200,0,160,0,120,0C80,0,40,0,20,0L0,0Z">
+            </path>
         </svg>
 
         <script>
@@ -134,8 +208,313 @@
             tween.start();
         </script>
     </div>
-    <div id="div1">
-        <h1>KAKKAK</h1>
+
+
+    <div x-show="logo" id="cont">
+        <div id="txt" <p>Concursul Info-Oltenia este singura competiție interjudețeană de informatică din zona Olteniei,
+            la care pot participa elevii de liceu și gimnaziu, individual și pe echipe, din cele cinci județe ale
+            Olteniei: Dolj, Gorj, Mehedinți, Olt, Vâlcea, fiecare județ organizând pe rând concursul.</p>
+            <p>Colegiul Național ”Tudor Vladimirescu” a organizat acest concurs în anii 2005, 2012, 2017 și, după doi
+                ani de pauză datorați pandemiei, în 2023.</p>
+            <p>Un specific aparte al concursului îl reprezintă componența comisiei științifice de elaborare a
+                subiectelor, alcătuită exclusiv din foști olimpici, actualmente studenți, ai Colegiului Național ”Tudor
+                Vladimirescu” Târgu Jiu.</p>
+        </div>
     </div>
+
+    <div x-show="d1" id="cont">
+        <div id="txt">
+            <p>Probele de concurs se vor desfășura astfel:</p>
+            <ol>
+                <li>Sâmbătă, 25 februarie ora 15.00, proba pentru gimnaziu și echipe liceu</li>
+                <li>Duminică, 26 februarie ora 8.30, proba pentru liceu individual</li>
+            </ol>
+            <p>Succes!</p>
+        </div>
+    </div>
+
+    <div x-show="d2" id="cont">
+        <div id="txt">
+            <h4>Președinte concurs Info Oltenia</h4>
+            <p>Prof. dr. Marcela MREJERU</p>
+            <h4>Coordonator concurs</h4>
+            <p>Prof.&nbsp; Eugen Nodea</p>
+            <h4>Comisia științifică</h4>
+            <p>1. Bunget Mihai,&nbsp;profesor Colegiul Național ”Tudor Vladimirescu”, Tg-Jiu<br>
+                2. Popescu Ioan-Giovani, student Fac. de Automatică și Calculatoare București<br>
+                3. Dabelea Ioana,&nbsp;student Fac. de Automatică și Calculatoare București<br>
+                4. Țîr Vlad,&nbsp;student Fac. de Automatică și Calculatoare București<br>
+                5. Popeangă Mihnea, student Fac. de Automatică și Calculatoare București<br>
+                6. Vîlcu Eric, student Fac. de Automatică și Calculatoare București<br>
+                7. Groza Iulia, student Fac. de Automatică și Calculatoare București<br>
+                8. Chițan Rafael, student Fac. de Automatică și Calculatoare București<br>
+                9. Bogdan Răzvan, student Fac. de Automatică și Calculatoare București<br>
+                10. Covei Denis, student Fac. de Automatică și Calculatoare București<br>
+                11. Prunescu Bogdan, student Fac. de Automatică și Calculatoare București<br>
+                12. Dinuță Eduard, student Fac. de Automatică și Calculatoare București<br>
+                13. Nodea Eugen, profesor Colegiul Național ”Tudor Vladimirescu”, Tg-Jiu</p>
+        </div>
+    </div>
+
+    <div x-show="d3" id="cont">
+        <div id="txt">
+            <figure class="wp-block-image size-large"><img decoding="async" width="700" height="906"
+                    src="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0001-700x906.jpg"
+                    alt="" class="wp-image-207"
+                    srcset="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0001-700x906.jpg 700w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0001-232x300.jpg 232w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0001-768x994.jpg 768w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0001-1187x1536.jpg 1187w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0001-1200x1553.jpg 1200w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0001.jpg 1275w"
+                    sizes="(max-width: 700px) 85vw, 700px"></figure>
+
+
+
+            <figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="700" height="906"
+                    src="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0002-700x906.jpg"
+                    alt="" class="wp-image-208"
+                    srcset="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0002-700x906.jpg 700w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0002-232x300.jpg 232w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0002-768x994.jpg 768w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0002-1187x1536.jpg 1187w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0002-1200x1553.jpg 1200w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0002.jpg 1275w"
+                    sizes="(max-width: 700px) 85vw, 700px"></figure>
+
+
+
+            <figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="700" height="906"
+                    src="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0003-700x906.jpg"
+                    alt="" class="wp-image-209"
+                    srcset="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0003-700x906.jpg 700w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0003-232x300.jpg 232w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0003-768x994.jpg 768w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0003-1187x1536.jpg 1187w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0003-1200x1553.jpg 1200w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Regulament-concurs-Info-Oltenia_page-0003.jpg 1275w"
+                    sizes="(max-width: 700px) 85vw, 700px"></figure>
+        </div>
+    </div>
+
+    <div x-show="d4" id="cont">
+        <div id="txt">
+            <h4></h4>
+            <h4>Membrii comisiei de organizare:</h4>
+            <ul>
+                <li>Oana Dabelea, prof. Colegiul Național ”Tudor Vladimirescu”</li>
+                <li>Adela Lugoj, prof. Colegiul Național ”Tudor Vladimirescu”</li>
+                <li>Domnica Manoilă, prof. Colegiul Național ”Tudor Vladimirescu”</li>
+                <li>Elena Maria,&nbsp;prof. Colegiul Național ”Tudor Vladimirescu”</li>
+                <li>Gabriela Nodea, prof. Colegiul Național ”Tudor Vladimirescu”</li>
+                <li>Alina Petrică, prof. Colegiul Național ”Tudor Vladimirescu”</li>
+                <li>Anca Popescu,&nbsp;prof. Colegiul Național ”Tudor Vladimirescu”</li>
+                <li>Sanda Popescu, prof. Colegiul Național ”Tudor Vladimirescu”</li>
+            </ul>
+            <p>Informatician Colegiul Național ”Tudor Vladimirescu”: &nbsp;&nbsp;&nbsp; Mihaela Tutunaru</p>
+            <p>Au asigurat funcționarea site-ului, elevii:</p>
+            <p>Secotă Teodora, clasa a 10-a A</p>
+            <p>Popescu Petruț, clasa a 10-a B</p>
+        </div>
+    </div>
+
+    <div x-show="d5" id="cont">
+        <div id="txt">
+            <div x-data="{ selectedTab: 'ind_liceu' }" class="w-full">
+                <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()"
+                    class="flex gap-2 overflow-x-auto border-b border-neutral-300 dark:border-neutral-700"
+                    role="tablist" aria-label="tab options">
+                    <button @click="selectedTab = 'ind_liceu'" :aria-selected="selectedTab === 'ind_liceu'"
+                        :tabindex="selectedTab === 'ind_liceu' ? '0' : '-1'"
+                        :class="selectedTab === 'ind_liceu' ? 'font-bold text-black border-b-2 border-black dark:border-white dark:text-white' : 'text-neutral-600 font-medium dark:text-neutral-400 dark:hover:border-b-neutral-300 dark:hover:text-neutral-100 hover:border-b-2 hover:border-b-neutral-800 hover:text-neutral-900'"
+                        class="h-min px-4 py-2 text-sm" type="button" role="tab" aria-controls="tabpanelind_liceu">Proba
+                        individuală liceu</button>
+                    <button @click="selectedTab = 'ind_gimnaziu'" :aria-selected="selectedTab === 'ind_gimnaziu'"
+                        :tabindex="selectedTab === 'ind_gimnaziu' ? '0' : '-1'"
+                        :class="selectedTab === 'ind_gimnaziu' ? 'font-bold text-black border-b-2 border-black dark:border-white dark:text-white' : 'text-neutral-600 font-medium dark:text-neutral-400 dark:hover:border-b-neutral-300 dark:hover:text-neutral-100 hover:border-b-2 hover:border-b-neutral-800 hover:text-neutral-900'"
+                        class="h-min px-4 py-2 text-sm" type="button" role="tab"
+                        aria-controls="tabpanelind_gimnaziu">Proba individuală gimnaziu</button>
+                    <button @click="selectedTab = 'echipe'" :aria-selected="selectedTab === 'echipe'"
+                        :tabindex="selectedTab === 'echipe' ? '0' : '-1'"
+                        :class="selectedTab === 'echipe' ? 'font-bold text-black border-b-2 border-black dark:border-white dark:text-white' : 'text-neutral-600 font-medium dark:text-neutral-400 dark:hover:border-b-neutral-300 dark:hover:text-neutral-100 hover:border-b-2 hover:border-b-neutral-800 hover:text-neutral-900'"
+                        class="h-min px-4 py-2 text-sm" type="button" role="tab" aria-controls="tabpanelechipe">Proba pe
+                        echipe</button>
+                </div>
+                <div class="px-2 py-4 text-neutral-600 dark:text-neutral-400">
+                    <div x-show="selectedTab === 'ind_liceu'" id="tabpanelind_liceu" role="tabpanel"
+                        aria-label="ind_liceu"><b><a href="#" class="underline">
+                                <figure class="wp-block-image size-large"><img decoding="async" width="700" height="495"
+                                        src="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_1-700x495.jpg"
+                                        alt="" class="wp-image-249"
+                                        srcset="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_1-700x495.jpg 700w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_1-300x212.jpg 300w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_1-768x543.jpg 768w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_1-1536x1086.jpg 1536w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_1-2048x1448.jpg 2048w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_1-1200x849.jpg 1200w"
+                                        sizes="(max-width: 700px) 85vw, 700px"></figure>
+
+
+
+                                <figure class="wp-block-image size-large"><img decoding="async" loading="lazy"
+                                        width="700" height="495"
+                                        src="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_2-700x495.jpg"
+                                        alt="" class="wp-image-250"
+                                        srcset="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_2-700x495.jpg 700w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_2-300x212.jpg 300w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_2-768x543.jpg 768w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_2-1536x1086.jpg 1536w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_2-2048x1448.jpg 2048w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_2-1200x849.jpg 1200w"
+                                        sizes="(max-width: 700px) 85vw, 700px"></figure>
+
+
+
+                                <figure class="wp-block-image size-large"><img decoding="async" loading="lazy"
+                                        width="700" height="495"
+                                        src="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_3-700x495.jpg"
+                                        alt="" class="wp-image-251"
+                                        srcset="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_3-700x495.jpg 700w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_3-300x212.jpg 300w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_3-768x543.jpg 768w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_3-1536x1086.jpg 1536w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_3-2048x1448.jpg 2048w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_3-1200x849.jpg 1200w"
+                                        sizes="(max-width: 700px) 85vw, 700px"></figure>
+                    </div>
+                    <div x-show="selectedTab === 'ind_gimnaziu'" id="tabpanelind_gimnaziu" role="tabpanel"
+                        aria-label="ind_gimnaziu"><b><a href="#" class="underline">
+                                <figure class="wp-block-image size-large"><img decoding="async" width="700" height="495"
+                                        src="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Gimnaziu-2-700x495.jpg"
+                                        alt="" class="wp-image-253"
+                                        srcset="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Gimnaziu-2-700x495.jpg 700w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Gimnaziu-2-300x212.jpg 300w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Gimnaziu-2-768x543.jpg 768w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Gimnaziu-2-1536x1086.jpg 1536w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Gimnaziu-2-2048x1448.jpg 2048w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Gimnaziu-2-1200x849.jpg 1200w"
+                                        sizes="(max-width: 700px) 85vw, 700px"></figure>
+                    </div>
+                    <div x-show="selectedTab === 'echipe'" id="tabpanelechipe" role="tabpanel" aria-label="echipe"><b><a
+                                href="#" class="underline">
+                                <figure class="wp-block-image size-large"><img decoding="async" width="700" height="495"
+                                        src="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_1-1-700x495.jpg"
+                                        alt="" class="wp-image-229"
+                                        srcset="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_1-1-700x495.jpg 700w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_1-1-300x212.jpg 300w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_1-1-768x543.jpg 768w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_1-1-1536x1086.jpg 1536w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_1-1-2048x1448.jpg 2048w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_1-1-1200x849.jpg 1200w"
+                                        sizes="(max-width: 700px) 85vw, 700px"></figure>
+
+
+
+                                <figure class="wp-block-image size-large"><img decoding="async" loading="lazy"
+                                        width="700" height="495"
+                                        src="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_2-1-700x495.jpg"
+                                        alt="" class="wp-image-230"
+                                        srcset="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_2-1-700x495.jpg 700w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_2-1-300x212.jpg 300w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_2-1-768x543.jpg 768w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_2-1-1536x1086.jpg 1536w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_2-1-2048x1448.jpg 2048w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_2-1-1200x849.jpg 1200w"
+                                        sizes="(max-width: 700px) 85vw, 700px"></figure>
+
+
+
+                                <figure class="wp-block-image size-large"><img decoding="async" loading="lazy"
+                                        width="700" height="495"
+                                        src="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_3-1-700x495.jpg"
+                                        alt="" class="wp-image-231"
+                                        srcset="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_3-1-700x495.jpg 700w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_3-1-300x212.jpg 300w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_3-1-768x543.jpg 768w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_3-1-1536x1086.jpg 1536w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_3-1-2048x1448.jpg 2048w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_3-1-1200x849.jpg 1200w"
+                                        sizes="(max-width: 700px) 85vw, 700px"></figure>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div x-show="d6" id="cont">
+        <div id="txt">
+            <div x-data="{ selectedTab: 'probleme1' }" class="w-full">
+                <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()" class="flex gap-2 overflow-x-auto border-b border-neutral-300 dark:border-neutral-700" role="tablist" aria-label="tab options">
+                    <button @click="selectedTab = 'probleme1'" :aria-selected="selectedTab === 'probleme1'" :tabindex="selectedTab === 'probleme1' ? '0' : '-1'" :class="selectedTab === 'probleme1' ? 'font-bold text-black border-b-2 border-black dark:border-white dark:text-white' : 'text-neutral-600 font-medium dark:text-neutral-400 dark:hover:text-neutral-100 hover:border-b-2 hover:border-b-neutral-800 hover:text-neutral-900'" class="h-min px-4 py-2 text-sm" type="button" role="tab" aria-controls="tabpanelprobleme1">Probleme</button>
+                    <button @click="selectedTab = 'rezultate1'" :aria-selected="selectedTab === 'rezultate1'" :tabindex="selectedTab === 'rezultate1' ? '0' : '-1'" :class="selectedTab === 'rezultate1' ? 'font-bold text-black border-b-2 border-black dark:border-white dark:text-white' : 'text-neutral-600 font-medium dark:text-neutral-400  dark:hover:text-neutral-100 hover:border-b-2 hover:border-b-neutral-800 hover:text-neutral-900'" class="h-min px-4 py-2 text-sm" type="button" role="tab" aria-controls="tabpanelrezultate1">Rezultate</button>
+                </div>
+                <div class="px-2 py-4 text-neutral-600 dark:text-neutral-400">
+                    <div x-show="selectedTab === 'probleme1'" id="tabpanelprobleme1" role="tabpanel" aria-label="probleme1">
+                        
+                        <div class="wp-block-file">
+                            <object class="wp-block-file__embed" data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/desc-sir.pdf" type="application/pdf" style="width:100%;height:600px" aria-label="Embed of desc-sir."></object>
+                            <a class="download-link" id="wp-block-file--media-e5a371a3-6502-4baf-a0ca-5bac33e27afb" href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/desc-sir.pdf">desc-sir</a>
+                        </div><br>
+                
+                        <div class="wp-block-file">
+                            <object class="wp-block-file__embed" data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/desc-perfecte.pdf" type="application/pdf" style="width:100%;height:600px" aria-label="Embed of desc-perfecte."></object>
+                            <a class="download-link" id="wp-block-file--media-78faa40e-e50a-43d2-8e30-72fa5abc8d09" href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/desc-perfecte.pdf">desc-perfecte</a>
+                        </div><br>
+                
+                        <div class="wp-block-file">
+                            <object class="wp-block-file__embed" data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/mozaic_descriere.pdf" type="application/pdf" style="width:100%;height:600px" aria-label="Embed of mozaic_descriere."></object>
+                            <a class="download-link" id="wp-block-file--media-b851b7aa-cb50-4510-9a4a-3c0fba9fd529" href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/mozaic_descriere.pdf">mozaic_descriere</a>
+                        </div><br>
+                
+                        <div class="wp-block-file">
+                            <object class="wp-block-file__embed" data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/gladiatori_descriere.pdf" type="application/pdf" style="width:100%;height:600px" aria-label="Embed of gladiatori_descriere."></object>
+                            <a class="download-link" id="wp-block-file--media-93e006ec-cbd8-42ac-985e-012c5f46221f" href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/gladiatori_descriere.pdf">gladiatori_descriere</a>
+                        </div><br>
+                
+                        <div class="wp-block-file">
+                            <object class="wp-block-file__embed" data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/programari_descriere.pdf" type="application/pdf" style="width:100%;height:600px" aria-label="Embed of programari_descriere."></object>
+                            <a class="download-link" id="wp-block-file--media-ba7ab712-7004-4e97-a003-1f256f5ebf59" href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/programari_descriere.pdf">programari_descriere</a>
+                        </div><br>
+                
+                        <div class="wp-block-file">
+                            <object class="wp-block-file__embed" data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/prefixe_descriere.pdf" type="application/pdf" style="width:100%;height:600px" aria-label="Embed of prefixe_descriere."></object>
+                            <a class="download-link" id="wp-block-file--media-7bb57ad7-67ea-4d08-ac40-e14ef1240a6e" href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/prefixe_descriere.pdf">prefixe_descriere</a>
+                        </div><br>
+                
+                        <div class="wp-block-file">
+                            <object class="wp-block-file__embed" data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/cursa_descriere.pdf" type="application/pdf" style="width:100%;height:600px" aria-label="Embed of cursa_descriere."></object>
+                            <a class="download-link" id="wp-block-file--media-6ade69c0-7f3a-4e80-8188-64f5580e309f" href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/cursa_descriere.pdf">cursa_descriere</a>
+                        </div><br>
+                
+                        <div class="wp-block-file">
+                            <object class="wp-block-file__embed" data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/inversiuni_descriere-1.pdf" type="application/pdf" style="width:100%;height:600px" aria-label="Embed of inversiuni_descriere-1."></object>
+                            <a class="download-link" id="wp-block-file--media-9930acdd-0d30-4705-96c3-79840273cec8" href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/inversiuni_descriere-1.pdf">inversiuni_descriere-1</a>
+                        </div><br>
+                
+                    </div>
+                    <div x-show="selectedTab === 'rezultate1'" id="tabpanelrezultate1" role="tabpanel" aria-label="rezultate1">
+                        <h4>Rezultate ziua 1</h4>
+                    </div> 
+                </div>      
+        </div></div></div>
+
+        <div x-show="d7" id="cont">
+            <div id="txt">
+                <div x-data="{ selectedTab: 'probleme2' }" class="w-full">
+                    <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()" class="flex gap-2 overflow-x-auto border-b border-neutral-300 dark:border-neutral-700" role="tablist" aria-label="tab options">
+                        <button @click="selectedTab = 'probleme2'" :aria-selected="selectedTab === 'probleme2'" :tabindex="selectedTab === 'probleme2' ? '0' : '-1'" :class="selectedTab === 'probleme2' ? 'font-bold text-black border-b-2 border-black dark:border-white dark:text-white' : 'text-neutral-600 font-medium dark:text-neutral-400 dark:hover:text-neutral-100 hover:border-b-2 hover:border-b-neutral-800 hover:text-neutral-900'" class="h-min px-4 py-2 text-sm" type="button" role="tab" aria-controls="tabpanelprobleme2">Probleme</button>
+                        <button @click="selectedTab = 'rezultate2'" :aria-selected="selectedTab === 'rezultate2'" :tabindex="selectedTab === 'rezultate2' ? '0' : '-1'" :class="selectedTab === 'rezultate2' ? 'font-bold text-black border-b-2 border-black dark:border-white dark:text-white' : 'text-neutral-600 font-medium dark:text-neutral-400  dark:hover:text-neutral-100 hover:border-b-2 hover:border-b-neutral-800 hover:text-neutral-900'" class="h-min px-4 py-2 text-sm" type="button" role="tab" aria-controls="tabpanelrezultate2">Rezultate</button>
+                    </div>
+                    <div class="px-2 py-4 text-neutral-600 dark:text-neutral-400">
+                        <div x-show="selectedTab === 'probleme2'" id="tabpanelprobleme2" role="tabpanel" aria-label="probleme2">
+                            
+                            <div class="wp-block-file">
+                                <object class="wp-block-file__embed" data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/desc-sir.pdf" type="application/pdf" style="width:100%;height:600px" aria-label="Embed of desc-sir."></object>
+                                <a class="download-link" id="wp-block-file--media-e5a371a3-6502-4baf-a0ca-5bac33e27afb" href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/desc-sir.pdf">desc-sir</a>
+                            </div><br>
+                    
+                            <div class="wp-block-file">
+                                <object class="wp-block-file__embed" data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/desc-perfecte.pdf" type="application/pdf" style="width:100%;height:600px" aria-label="Embed of desc-perfecte."></object>
+                                <a class="download-link" id="wp-block-file--media-78faa40e-e50a-43d2-8e30-72fa5abc8d09" href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/desc-perfecte.pdf">desc-perfecte</a>
+                            </div><br>
+                    
+                            <div class="wp-block-file">
+                                <object class="wp-block-file__embed" data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/mozaic_descriere.pdf" type="application/pdf" style="width:100%;height:600px" aria-label="Embed of mozaic_descriere."></object>
+                                <a class="download-link" id="wp-block-file--media-b851b7aa-cb50-4510-9a4a-3c0fba9fd529" href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/mozaic_descriere.pdf">mozaic_descriere</a>
+                            </div><br>
+                    
+                            <div class="wp-block-file">
+                                <object class="wp-block-file__embed" data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/gladiatori_descriere.pdf" type="application/pdf" style="width:100%;height:600px" aria-label="Embed of gladiatori_descriere."></object>
+                                <a class="download-link" id="wp-block-file--media-93e006ec-cbd8-42ac-985e-012c5f46221f" href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/gladiatori_descriere.pdf">gladiatori_descriere</a>
+                            </div><br>
+                    
+                            <div class="wp-block-file">
+                                <object class="wp-block-file__embed" data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/programari_descriere.pdf" type="application/pdf" style="width:100%;height:600px" aria-label="Embed of programari_descriere."></object>
+                                <a class="download-link" id="wp-block-file--media-ba7ab712-7004-4e97-a003-1f256f5ebf59" href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/programari_descriere.pdf">programari_descriere</a>
+                            </div><br>
+                    
+                            <div class="wp-block-file">
+                                <object class="wp-block-file__embed" data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/prefixe_descriere.pdf" type="application/pdf" style="width:100%;height:600px" aria-label="Embed of prefixe_descriere."></object>
+                                <a class="download-link" id="wp-block-file--media-7bb57ad7-67ea-4d08-ac40-e14ef1240a6e" href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/prefixe_descriere.pdf">prefixe_descriere</a>
+                            </div><br>
+                    
+                            <div class="wp-block-file">
+                                <object class="wp-block-file__embed" data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/cursa_descriere.pdf" type="application/pdf" style="width:100%;height:600px" aria-label="Embed of cursa_descriere."></object>
+                                <a class="download-link" id="wp-block-file--media-6ade69c0-7f3a-4e80-8188-64f5580e309f" href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/cursa_descriere.pdf">cursa_descriere</a>
+                            </div><br>
+                    
+                            <div class="wp-block-file">
+                                <object class="wp-block-file__embed" data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/inversiuni_descriere-1.pdf" type="application/pdf" style="width:100%;height:600px" aria-label="Embed of inversiuni_descriere-1."></object>
+                                <a class="download-link" id="wp-block-file--media-9930acdd-0d30-4705-96c3-79840273cec8" href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/inversiuni_descriere-1.pdf">inversiuni_descriere-1</a>
+                            </div><br>
+                    
+                        </div>
+                        <div x-show="selectedTab === 'rezultate2'" id="tabpanelrezultate2" role="tabpanel" aria-label="rezultate2">
+                            <h4>Rezultate ziua 2</h4>
+                        </div> 
+                    </div>
+                    
+            </div></div></div>
+
+            <div x-show="d8" id="cont">
+                <div id="txt">
+                    <h4>Sponsori</h4>
+                    <p></p>
+                </div>
+            </div>
+        
 </body>
+
 </html>
