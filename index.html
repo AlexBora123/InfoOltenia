@@ -75,7 +75,7 @@
         }
 
         #txt {
-            font-family: 'Arial', sans-serif;
+            font-family:'Times New Roman', Times, serif;
             font-size: 1.1rem;
             line-height: 1.6;
             color: #333;
@@ -115,11 +115,20 @@ h4, p {
                             display: none;
                         }
                     }
+    button{
+        font-family:'Times New Roman', Times, serif;
+        color: #000;
+    text-decoration: underline;
+}
+    button:active{
+        color: #333;
+        text-decoration: underline;
+    }
                     
     </style>
 </head>
 
-<body x-data="{ logo: true, d1: false, d2: false, d3: false, d4: false, d5: false, d6: false, d7: false, d8: false,
+<body x-transition:enter="transition ease-out duration-300" x-data="{ logo: true, d1: false, d2: false, d3: false, d4: false, d5: false, d6: false, d7: false, d8: false,
     sterge()
     {
         this.logo = false;   
@@ -314,24 +323,27 @@ h4, p {
         <div id="txt">
             <div x-data="{ selectedTab: 'ind_liceu' }" class="w-full">
                 <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()"
-                    class="flex gap-2 overflow-x-auto border-b border-neutral-300 dark:border-neutral-700"
-                    role="tablist" aria-label="tab options">
-                    <button @click="selectedTab = 'ind_liceu'" :aria-selected="selectedTab === 'ind_liceu'"
-                        :tabindex="selectedTab === 'ind_liceu' ? '0' : '-1'"
-                        :class="selectedTab === 'ind_liceu' ? 'font-bold text-black border-b-2 border-black dark:border-white dark:text-white' : 'text-neutral-600 font-medium dark:text-neutral-400 dark:hover:border-b-neutral-300 dark:hover:text-neutral-100 hover:border-b-2 hover:border-b-neutral-800 hover:text-neutral-900'"
-                        class="h-min px-4 py-2 text-sm" type="button" role="tab" aria-controls="tabpanelind_liceu">Proba
-                        individuală liceu</button>
-                    <button @click="selectedTab = 'ind_gimnaziu'" :aria-selected="selectedTab === 'ind_gimnaziu'"
-                        :tabindex="selectedTab === 'ind_gimnaziu' ? '0' : '-1'"
-                        :class="selectedTab === 'ind_gimnaziu' ? 'font-bold text-black border-b-2 border-black dark:border-white dark:text-white' : 'text-neutral-600 font-medium dark:text-neutral-400 dark:hover:border-b-neutral-300 dark:hover:text-neutral-100 hover:border-b-2 hover:border-b-neutral-800 hover:text-neutral-900'"
-                        class="h-min px-4 py-2 text-sm" type="button" role="tab"
-                        aria-controls="tabpanelind_gimnaziu">Proba individuală gimnaziu</button>
-                    <button @click="selectedTab = 'echipe'" :aria-selected="selectedTab === 'echipe'"
-                        :tabindex="selectedTab === 'echipe' ? '0' : '-1'"
-                        :class="selectedTab === 'echipe' ? 'font-bold text-black border-b-2 border-black dark:border-white dark:text-white' : 'text-neutral-600 font-medium dark:text-neutral-400 dark:hover:border-b-neutral-300 dark:hover:text-neutral-100 hover:border-b-2 hover:border-b-neutral-800 hover:text-neutral-900'"
-                        class="h-min px-4 py-2 text-sm" type="button" role="tab" aria-controls="tabpanelechipe">Proba pe
-                        echipe</button>
-                </div>
+                         class="flex gap-2 overflow-x-auto border-b border-neutral-300 dark:border-neutral-700"
+                         role="tablist" aria-label="tab options">
+                        
+                        <button @click="selectedTab = 'ind_liceu'" 
+                                :aria-selected="selectedTab === 'ind_liceu'"
+                                :tabindex="selectedTab === 'ind_liceu' ? '0' : '-1'" 
+                                role="tab" 
+                                aria-controls="tabpanelind_liceu">Proba individuală liceu</button>
+                        
+                        <button @click="selectedTab = 'ind_gimnaziu'" 
+                                :aria-selected="selectedTab === 'ind_gimnaziu'"
+                                :tabindex="selectedTab === 'ind_gimnaziu' ? '0' : '-1'" 
+                                role="tab" 
+                                aria-controls="tabpanelind_gimnaziu">Proba individuală gimnaziu</button>
+                        
+                        <button @click="selectedTab = 'echipe'" 
+                                :aria-selected="selectedTab === 'echipe'"
+                                :tabindex="selectedTab === 'echipe' ? '0' : '-1'" 
+                                role="tab" 
+                                aria-controls="tabpanelechipe">Proba pe echipe</button>
+                    </div>
                 <div class="px-2 py-4 text-neutral-600 dark:text-neutral-400">
                     <div x-show="selectedTab === 'ind_liceu'" id="tabpanelind_liceu" role="tabpanel"
                         aria-label="ind_liceu"><b><a href="#" class="underline">
@@ -404,8 +416,8 @@ h4, p {
         <div id="txt">
             <div x-data="{ selectedTab: 'probleme1' }" class="w-full">
                 <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()" class="flex gap-2 overflow-x-auto border-b border-neutral-300 dark:border-neutral-700" role="tablist" aria-label="tab options">
-                    <button @click="selectedTab = 'probleme1'" :aria-selected="selectedTab === 'probleme1'" :tabindex="selectedTab === 'probleme1' ? '0' : '-1'" :class="selectedTab === 'probleme1' ? 'font-bold text-black border-b-2 border-black dark:border-white dark:text-white' : 'text-neutral-600 font-medium dark:text-neutral-400 dark:hover:text-neutral-100 hover:border-b-2 hover:border-b-neutral-800 hover:text-neutral-900'" class="h-min px-4 py-2 text-sm" type="button" role="tab" aria-controls="tabpanelprobleme1">Probleme</button>
-                    <button @click="selectedTab = 'rezultate1'" :aria-selected="selectedTab === 'rezultate1'" :tabindex="selectedTab === 'rezultate1' ? '0' : '-1'" :class="selectedTab === 'rezultate1' ? 'font-bold text-black border-b-2 border-black dark:border-white dark:text-white' : 'text-neutral-600 font-medium dark:text-neutral-400  dark:hover:text-neutral-100 hover:border-b-2 hover:border-b-neutral-800 hover:text-neutral-900'" class="h-min px-4 py-2 text-sm" type="button" role="tab" aria-controls="tabpanelrezultate1">Rezultate</button>
+                    <button @click="selectedTab = 'probleme1'" :aria-selected="selectedTab === 'probleme1'" :tabindex="selectedTab === 'probleme1' ? '0' : '-1'"  id="select">Probleme</button>
+                    <button @click="selectedTab = 'rezultate1'" :aria-selected="selectedTab === 'rezultate1'" :tabindex="selectedTab === 'rezultate1' ? '0' : '-1'" id="select" >Rezultate</button>
                 </div>
                 <div class="px-2 py-4 text-neutral-600 dark:text-neutral-400">
                     <div x-show="selectedTab === 'probleme1'" id="tabpanelprobleme1" role="tabpanel" aria-label="probleme1">
@@ -461,8 +473,8 @@ h4, p {
             <div id="txt">
                 <div x-data="{ selectedTab: 'probleme2' }" class="w-full">
                     <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()" class="flex gap-2 overflow-x-auto border-b border-neutral-300 dark:border-neutral-700" role="tablist" aria-label="tab options">
-                        <button @click="selectedTab = 'probleme2'" :aria-selected="selectedTab === 'probleme2'" :tabindex="selectedTab === 'probleme2' ? '0' : '-1'" :class="selectedTab === 'probleme2' ? 'font-bold text-black border-b-2 border-black dark:border-white dark:text-white' : 'text-neutral-600 font-medium dark:text-neutral-400 dark:hover:text-neutral-100 hover:border-b-2 hover:border-b-neutral-800 hover:text-neutral-900'" class="h-min px-4 py-2 text-sm" type="button" role="tab" aria-controls="tabpanelprobleme2">Probleme</button>
-                        <button @click="selectedTab = 'rezultate2'" :aria-selected="selectedTab === 'rezultate2'" :tabindex="selectedTab === 'rezultate2' ? '0' : '-1'" :class="selectedTab === 'rezultate2' ? 'font-bold text-black border-b-2 border-black dark:border-white dark:text-white' : 'text-neutral-600 font-medium dark:text-neutral-400  dark:hover:text-neutral-100 hover:border-b-2 hover:border-b-neutral-800 hover:text-neutral-900'" class="h-min px-4 py-2 text-sm" type="button" role="tab" aria-controls="tabpanelrezultate2">Rezultate</button>
+                        <button @click="selectedTab = 'probleme2'" :aria-selected="selectedTab === 'probleme2'" :tabindex="selectedTab === 'probleme2' ? '0' : '-1'" >Probleme</button>
+                        <button @click="selectedTab = 'rezultate2'" :aria-selected="selectedTab === 'rezultate2'" :tabindex="selectedTab === 'rezultate2' ? '0' : '-1'">Rezultate</button>
                     </div>
                     <div class="px-2 py-4 text-neutral-600 dark:text-neutral-400">
                         <div x-show="selectedTab === 'probleme2'" id="tabpanelprobleme2" role="tabpanel" aria-label="probleme2">
