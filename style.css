@@ -26,10 +26,20 @@ nav {
     left: 0;
 }
 
+ul {
+    list-style-type: circle;
+    padding-left: 20px; 
+    font-size: 18px !important;
+}
+
+p{
+    font-size: 18px !important;
+}
+
 .meniu {
     font-size: 2vh;
     position: absolute;
-    right: 0;
+    right: max(1vw,20px);
 }
 
 #blob, #blob1, #blob2 {
@@ -68,23 +78,27 @@ svg {
     max-width: 2000px;
     margin: 4rem auto;
     background: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+ box-shadow: 20px 20px 60px #bebebe,
+               -20px -20px 60px #ffffff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     padding: 2rem;
-    font-size: 1.1rem;
     line-height: 1.6;
+    -webkit-box-shadow: 6px 9px 15px 5px rgba(214,207,214,0.79);
+-moz-box-shadow: 6px 9px 15px 5px rgba(214,207,214,0.79);
+box-shadow: 6px 9px 15px 5px rgba(214,207,214,0.79);
 }
 
 picture{
 }
 
 h1{
-    font-size: 25px;
-    color: #192033;
+    font-size: 25px !important;
+    color: #193320 !important;
 }
 
 h4 {
-    font-size: 1.3rem !important;
     line-height: 1.9;
     font-style: oblique;
 }
@@ -128,7 +142,6 @@ button:active {
 @media (max-width: 767px) {
     #cont {
         padding: 4px;
-        font-size: 1rem;
         width: 98vw;
         left: 1vw;
     }
@@ -145,9 +158,11 @@ button:active {
         
     }
     #imgLogo {
+        top: 20px;
         z-index: -1;
         height: min(40vh,40vw);
         width: max(40vw,40vh);
+        margin-left: calc((100vw - max(40vw,40vh))/2);
     }
     #cont {
         width: 80vw;
