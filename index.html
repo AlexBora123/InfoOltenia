@@ -61,11 +61,11 @@
          class="flex items-center justify-between px-6 py-4" aria-label="penguin ui menu">
          <a href="#" class = "titlu" @click="sterge(); logo=true;">
             <div style="color: white;" id="info"><u style="color: white;"><span style="color: white;">
-               <img id="imgLogo" src="infooltenia.png">
+               <img id="imgLogo" src="infooltenia.svg">
             </div>
          </a>
          <div class = "meniu">
-         <ul class="hidden items-center gap-4 sm:flex">
+         <ul class="hidden items-center gap-4 lg:flex">
             <li><a href="#"
                class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
                @click="sterge(); d1=true;">Anunțuri</a></li>
@@ -95,7 +95,7 @@
          <!-- Mobile Menu Button -->
          <button @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen" 
             :class="mobileMenuIsOpen ? 'fixed top-6 right-6 z-20' : null" type="button"
-            class="flex text-white sm:hidden bg-[#495A70] p-3 rounded" aria-label="mobile menu"
+            class="flex text-white lg:hidden bg-[#495A70] p-3 rounded" aria-label="mobile menu"
             aria-controls="mobileMenu">
             <svg x-cloak x-show="!mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="red" aria-hidden="true"
                viewBox="0 0 24 24" stroke-width="2" stroke="#FFFFFF" class="size-10">
@@ -118,7 +118,7 @@
             x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0"
             x-transition:leave="transition motion-reduce:transition-none ease-out duration-300"
             x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full" id="mobileMenu"
-            class="fixed max-h-svh overflow-y-auto inset-x-0 top-0 z-10 flex flex-col divide-y divide-neutral-300 rounded-b-none bg-blue text-white px-6 pb-6 pt-20 sm:hidden">
+            class="fixed max-h-svh overflow-y-auto inset-x-0 top-0 z-10 flex flex-col divide-y divide-neutral-300 rounded-b-none bg-blue text-white px-6 pb-6 pt-20 lg:hidden">
             <li @click="mobileMenuIsOpen = false; sterge(); d1 = true;" class="py-4">
                <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Anunțuri</a>
             </li>
