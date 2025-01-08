@@ -160,6 +160,10 @@ button:active {
         padding: 10px;
     }
 
+    .wp-block-file__embed{
+        width:100%;height:600px
+    }
+
     #blob {
         height: 80%;
     }
