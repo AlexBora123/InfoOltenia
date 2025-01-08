@@ -131,14 +131,6 @@ button:active {
 }
 
 @media (min-width: 768px) {
-    .download-link {
-        display: none;
-    }
-
-    .wp-block-file__embed{
-        display: none;
-    }
-
     #blob { 
         height: 50%; 
     }
