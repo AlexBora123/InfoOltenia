@@ -35,11 +35,11 @@
       <div id="blob">
          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 320">
             
-            <path id="blob1" stroke-width="1" fill="#495A70" d="m-79 193 1496-88 23-105-1518-8z">
+            <path id="blob1" stroke-width="1" fill="#497070" d="m-79 193 1496-88 23-105-1518-8z">
             </path>
          </svg>
          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 320" style="visibility:hidden;">
-            <path id="blob2"  stroke-width="1" fill="#495A70" d="m-78 105 1497 98 21-203-1518-8z">
+            <path id="blob2"  stroke-width="1" fill="#497070" d="m-78 105 1497 98 21-203-1518-8z">
             </path>
          </svg>
          <script>
@@ -61,11 +61,15 @@
          class="flex items-center justify-between px-6 py-4" aria-label="penguin ui menu">
          <a href="#" class = "titlu" @click="sterge(); logo=true;">
             <div style="color: white;" id="info"><u style="color: white;"><span style="color: white;">
-               <img id="imgLogo" src="infooltenia.svg">
+               <img id="imgLogo" src="inflt.svg">
             </div>
          </a>
          <div class = "meniu">
          <ul class="hidden items-center gap-4 lg:flex">
+            <li><a href="#"
+               class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
+               @click="sterge(); logo=true;">Prima paginǎ</a></li>
+            <li>
             <li><a href="#"
                class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
                @click="sterge(); d1=true;">Anunțuri</a></li>
@@ -93,9 +97,9 @@
          </ul>
         </div>
          <!-- Mobile Menu Button -->
-         <button @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen" 
+         <button id="menu" style="" @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen" 
             :class="mobileMenuIsOpen ? 'fixed top-6 right-6 z-20' : null" type="button"
-            class="flex text-white lg:hidden bg-[#495A70] p-3 rounded" aria-label="mobile menu"
+            class="flex text-white lg:hidden bg-[#497070] p-3 rounded" aria-label="mobile menu"
             aria-controls="mobileMenu">
             <svg x-cloak x-show="!mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="red" aria-hidden="true"
                viewBox="0 0 24 24" stroke-width="2" stroke="#FFFFFF" class="size-10">
@@ -108,7 +112,7 @@
          </button>
          <!-- Mobile Menu -->
          <ul x-cloak x-show="mobileMenuIsOpen"
-         style="background-color: #495A70;
+         style="background-color: #497070;
          border-radius: 16px;
          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
          backdrop-filter: blur(1px);
@@ -119,6 +123,9 @@
             x-transition:leave="transition motion-reduce:transition-none ease-out duration-300"
             x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full" id="mobileMenu"
             class="fixed max-h-svh overflow-y-auto inset-x-0 top-0 z-10 flex flex-col divide-y divide-neutral-300 rounded-b-none bg-blue text-white px-6 pb-6 pt-20 lg:hidden">
+            <li @click="mobileMenuIsOpen = false; sterge(); logo = true;" class="py-4">
+               <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Prima paginǎ</a>
+            </li>
             <li @click="mobileMenuIsOpen = false; sterge(); d1 = true;" class="py-4">
                <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Anunțuri</a>
             </li>
@@ -310,6 +317,17 @@
             </div>
          </div>
       </div>
+      <footer class="bg-gray-800 text-white py-4 mt-8">
+         <div class="container mx-auto text-center">
+            <p>&copy; 2025 Your Company Name. All Rights Reserved.</p>
+            <p><a href="/privacy-policy" class="underline">Privacy Policy</a> | <a href="/terms-of-service" class="underline">Terms of Service</a></p>
+            <p>Follow us on: 
+               <a href="https://www.facebook.com" class="mx-2">Facebook</a>
+               <a href="https://twitter.com" class="mx-2">Twitter</a>
+               <a href="https://www.instagram.com" class="mx-2">Instagram</a>
+            </p>
+         </div>
+      </footer>
       <div x-show="d6" id="cont">
       <div id="txt">
       <div x-data="{ selectedTab: 'probleme1' }" class="w-full">

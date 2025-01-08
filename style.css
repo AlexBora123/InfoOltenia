@@ -20,7 +20,7 @@ h4, nav, #cont {
 nav {
     width: 100%;
     z-index: 1;
-    background-color: #495A70;
+    background-color: #497070;
     position: absolute;
     top: 0;
     left: 0;
@@ -50,6 +50,8 @@ p{
 
 #blob {
     height: 50%;
+    position: fixed;
+    top:0px;
 }
 
 svg {
@@ -100,8 +102,8 @@ h1{
 }
 
 h4 {
-    line-height: 1.9;
-    font-style: oblique;
+    font-size: 25px !important;
+    color: #193320 !important;
 }
 
 h4, p {
@@ -141,6 +143,14 @@ button:active {
 }
 
 @media (max-width: 767px) {
+    h1{
+        font-size: 20px !important;
+        color: #193320 !important;
+    }
+    h{
+        font-size: 20px !important;
+        color: #193320 !important;
+    }
     #cont {
         padding: 4px;
         width: 98vw;
@@ -166,12 +176,12 @@ button:active {
         margin-left: calc((90vw - max(40vw,40vh))/2);
     }
     #cont {
-        width: 80vw;
+        width: 100vw;
         background-color: rgba(255, 255, 255, 0);
         position: absolute;
         top: 25vh;
-        left: 10vw;
-        padding: 3vh;
+        left: 0vw;
+        padding: 1vh;
         border-radius: 8px;
         overflow-y: scroll;
         background-color: transparent;
@@ -188,3 +198,4 @@ nav ul {
 #info {
     position: relative;
 }
+
