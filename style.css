@@ -180,7 +180,7 @@ button:active {
         position: absolute;
         top: 25vh;
         left: 0vw;
-        padding: 1vh;
+        padding: 0.5vh;
         border-radius: 8px;
         background-color: transparent;
         color: black;
