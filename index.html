@@ -193,123 +193,28 @@
       </div>
       <div x-show="d2" id="cont">
          <div id="txt">
-            <h4>Președinte concurs Info Oltenia</h4>
-            <p>Prof. dr. Marcela MREJERU</p>
-            <h4>Coordonator concurs</h4>
-            <p>Prof.&nbsp; Eugen Nodea</p>
-            <h4>Comisia științifică</h4>
-            <p>1. Bunget Mihai,&nbsp;profesor Colegiul Național ”Tudor Vladimirescu”, Tg-Jiu<br>
-               2. Popescu Ioan-Giovani, student Fac. de Automatică și Calculatoare București<br>
-               3. Dabelea Ioana,&nbsp;student Fac. de Automatică și Calculatoare București<br>
-               4. Țîr Vlad,&nbsp;student Fac. de Automatică și Calculatoare București<br>
-               5. Popeangă Mihnea, student Fac. de Automatică și Calculatoare București<br>
-               6. Vîlcu Eric, student Fac. de Automatică și Calculatoare București<br>
-               7. Groza Iulia, student Fac. de Automatică și Calculatoare București<br>
-               8. Chițan Rafael, student Fac. de Automatică și Calculatoare București<br>
-               9. Bogdan Răzvan, student Fac. de Automatică și Calculatoare București<br>
-               10. Covei Denis, student Fac. de Automatică și Calculatoare București<br>
-               11. Prunescu Bogdan, student Fac. de Automatică și Calculatoare București<br>
-               12. Dinuță Eduard, student Fac. de Automatică și Calculatoare București<br>
-               13. Nodea Eugen, profesor Colegiul Național ”Tudor Vladimirescu”, Tg-Jiu
-            </p>
+            
          </div>
       </div>
+
       <div x-show="d3" id="cont">
          <div id="txt">
             <iframe src="regulament.pdf" width="100%" height="800" style="border:none;"></iframe>
          </div>
       </div>
+
       <div x-show="d4" id="cont">
          <div id="txt">
-            <h4></h4>
-            <h4>Membrii comisiei de organizare:</h4>
-            <ul>
-               <li>Oana Dabelea, prof. Colegiul Național ”Tudor Vladimirescu”</li>
-               <li>Adela Lugoj, prof. Colegiul Național ”Tudor Vladimirescu”</li>
-               <li>Domnica Manoilă, prof. Colegiul Național ”Tudor Vladimirescu”</li>
-               <li>Elena Maria,&nbsp;prof. Colegiul Național ”Tudor Vladimirescu”</li>
-               <li>Gabriela Nodea, prof. Colegiul Național ”Tudor Vladimirescu”</li>
-               <li>Alina Petrică, prof. Colegiul Național ”Tudor Vladimirescu”</li>
-               <li>Anca Popescu,&nbsp;prof. Colegiul Național ”Tudor Vladimirescu”</li>
-               <li>Sanda Popescu, prof. Colegiul Național ”Tudor Vladimirescu”</li>
-            </ul>
-            <p>Informatician Colegiul Național ”Tudor Vladimirescu”: &nbsp;&nbsp;&nbsp; Mihaela Tutunaru</p>
-            <p>Au asigurat funcționarea site-ului, elevii:</p>
-            <p>Secotă Teodora, clasa a 10-a A</p>
-            <p>Popescu Petruț, clasa a 10-a B</p>
+            
          </div>
       </div>
+      
       <div x-show="d5" id="cont">
          <div id="txt">
-            <div x-data="{ selectedTab: 'ind_liceu' }" class="w-full">
-               <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()"
-                  class="flex gap-2 overflow-x-auto border-b border-neutral-300 dark:border-neutral-700"
-                  role="tablist" aria-label="tab options">
-                  <button @click="selectedTab = 'ind_liceu'" :aria-selected="selectedTab === 'ind_liceu'"
-                     :tabindex="selectedTab === 'ind_liceu' ? '0' : '-1'" role="tab"
-                     aria-controls="tabpanelind_liceu">Proba individuală liceu</button>
-                  <button @click="selectedTab = 'ind_gimnaziu'" :aria-selected="selectedTab === 'ind_gimnaziu'"
-                     :tabindex="selectedTab === 'ind_gimnaziu' ? '0' : '-1'" role="tab"
-                     aria-controls="tabpanelind_gimnaziu">Proba individuală gimnaziu</button>
-                  <button @click="selectedTab = 'echipe'" :aria-selected="selectedTab === 'echipe'"
-                     :tabindex="selectedTab === 'echipe' ? '0' : '-1'" role="tab"
-                     aria-controls="tabpanelechipe">Proba pe echipe</button>
-               </div>
-               <div class="px-2 py-4 text-neutral-600 dark:text-neutral-400">
-                  <div x-show="selectedTab === 'ind_liceu'" id="tabpanelind_liceu" role="tabpanel"
-                     aria-label="ind_liceu">
-                     <b>
-                     <a href="#" class="underline">
-                        <figure class="wp-block-image size-large"><img decoding="async" width="700" height="495"
-                           src="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_1-700x495.jpg"
-                           alt="" class="wp-image-249"
-                           srcset="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_1-700x495.jpg 700w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_1-300x212.jpg 300w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_1-768x543.jpg 768w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_1-1536x1086.jpg 1536w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_1-2048x1448.jpg 2048w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_1-1200x849.jpg 1200w"
-                           sizes="(max-width: 700px) 85vw, 700px"></figure>
-                        <figure class="wp-block-image size-large"><img decoding="async" loading="lazy"
-                           width="700" height="495"
-                           src="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_2-700x495.jpg"
-                           alt="" class="wp-image-250"
-                           srcset="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_2-700x495.jpg 700w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_2-300x212.jpg 300w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_2-768x543.jpg 768w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_2-1536x1086.jpg 1536w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_2-2048x1448.jpg 2048w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_2-1200x849.jpg 1200w"
-                           sizes="(max-width: 700px) 85vw, 700px"></figure>
-                        <figure class="wp-block-image size-large"><img decoding="async" loading="lazy"
-                           width="700" height="495"
-                           src="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_3-700x495.jpg"
-                           alt="" class="wp-image-251"
-                           srcset="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_3-700x495.jpg 700w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_3-300x212.jpg 300w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_3-768x543.jpg 768w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_3-1536x1086.jpg 1536w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_3-2048x1448.jpg 2048w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Liceu_individual-1_3-1200x849.jpg 1200w"
-                           sizes="(max-width: 700px) 85vw, 700px"></figure>
-                  </div>
-                  <div x-show="selectedTab === 'ind_gimnaziu'" id="tabpanelind_gimnaziu" role="tabpanel"
-                     aria-label="ind_gimnaziu"><b><a href="#" class="underline">
-                  <figure class="wp-block-image size-large"><img decoding="async" width="700" height="495"
-                     src="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Gimnaziu-2-700x495.jpg"
-                     alt="" class="wp-image-253"
-                     srcset="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Gimnaziu-2-700x495.jpg 700w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Gimnaziu-2-300x212.jpg 300w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Gimnaziu-2-768x543.jpg 768w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Gimnaziu-2-1536x1086.jpg 1536w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Gimnaziu-2-2048x1448.jpg 2048w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Gimnaziu-2-1200x849.jpg 1200w"
-                     sizes="(max-width: 700px) 85vw, 700px"></figure>
-                  </div>
-                  <div x-show="selectedTab === 'echipe'" id="tabpanelechipe" role="tabpanel" aria-label="echipe"><b><a
-                     href="#" class="underline">
-                  <figure class="wp-block-image size-large"><img decoding="async" width="700" height="495"
-                     src="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_1-1-700x495.jpg"
-                     alt="" class="wp-image-229"
-                     srcset="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_1-1-700x495.jpg 700w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_1-1-300x212.jpg 300w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_1-1-768x543.jpg 768w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_1-1-1536x1086.jpg 1536w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_1-1-2048x1448.jpg 2048w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_1-1-1200x849.jpg 1200w"
-                     sizes="(max-width: 700px) 85vw, 700px"></figure>
-                  <figure class="wp-block-image size-large"><img decoding="async" loading="lazy"
-                     width="700" height="495"
-                     src="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_2-1-700x495.jpg"
-                     alt="" class="wp-image-230"
-                     srcset="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_2-1-700x495.jpg 700w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_2-1-300x212.jpg 300w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_2-1-768x543.jpg 768w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_2-1-1536x1086.jpg 1536w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_2-1-2048x1448.jpg 2048w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_2-1-1200x849.jpg 1200w"
-                     sizes="(max-width: 700px) 85vw, 700px"></figure>
-                  <figure class="wp-block-image size-large"><img decoding="async" loading="lazy"
-                     width="700" height="495"
-                     src="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_3-1-700x495.jpg"
-                     alt="" class="wp-image-231"
-                     srcset="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_3-1-700x495.jpg 700w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_3-1-300x212.jpg 300w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_3-1-768x543.jpg 768w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_3-1-1536x1086.jpg 1536w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_3-1-2048x1448.jpg 2048w, https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/Echipaje_3-1-1200x849.jpg 1200w"
-                     sizes="(max-width: 700px) 85vw, 700px"></figure>
-                  </div>
-               </div>
-            </div>
+            
          </div>
       </div>
+
       <div x-show="d6" id="cont">
       <div id="txt">
       <div x-data="{ selectedTab: 'probleme1' }" class="w-full">
@@ -324,95 +229,13 @@
       <div class="px-2 py-4 text-neutral-600 dark:text-neutral-400">
       <div x-show="selectedTab === 'probleme1'" id="tabpanelprobleme1" role="tabpanel"
          aria-label="probleme1">
-      <div class="wp-block-file">
-      <object class="wp-block-file__embed"
-         data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/desc-sir.pdf"
-         type="application/pdf" x-init="window.addEventListener('resize', () => $el.style.display = window.innerWidth <= 768 ? 'none' : 'block')"
-     x-ref="content"
-     style="width:100%;height:600px"
-         aria-label="Embed of desc-sir."></object>
-      <a class="download-link" id="wp-block-file--media-e5a371a3-6502-4baf-a0ca-5bac33e27afb"
-         href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/desc-sir.pdf">desc-sir</a>
-      </div><br>
-      <div class="wp-block-file">
-      <object class="wp-block-file__embed"
-         data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/desc-perfecte.pdf"
-         type="application/pdf" x-init="window.addEventListener('resize', () => $el.style.display = window.innerWidth <= 768 ? 'none' : 'block')"
-     x-ref="content"
-     style="width:100%;height:600px"
-         aria-label="Embed of desc-perfecte."></object>
-      <a class="download-link" id="wp-block-file--media-78faa40e-e50a-43d2-8e30-72fa5abc8d09"
-         href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/desc-perfecte.pdf">desc-perfecte</a>
-      </div><br>
-      <div class="wp-block-file">
-      <object class="wp-block-file__embed"
-         data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/mozaic_descriere.pdf"
-         type="application/pdf" x-init="window.addEventListener('resize', () => $el.style.display = window.innerWidth <= 768 ? 'none' : 'block')"
-     x-ref="content"
-     style="width:100%;height:600px"
-         aria-label="Embed of mozaic_descriere."></object>
-      <a class="download-link" id="wp-block-file--media-b851b7aa-cb50-4510-9a4a-3c0fba9fd529"
-         href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/mozaic_descriere.pdf">mozaic_descriere</a>
-      </div><br>
-      <div class="wp-block-file">
-      <object class="wp-block-file__embed"
-         data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/gladiatori_descriere.pdf"
-         type="application/pdf" x-init="window.addEventListener('resize', () => $el.style.display = window.innerWidth <= 768 ? 'none' : 'block')"
-     x-ref="content"
-     style="width:100%;height:600px"
-         aria-label="Embed of gladiatori_descriere."></object>
-      <a class="download-link" id="wp-block-file--media-93e006ec-cbd8-42ac-985e-012c5f46221f"
-         href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/gladiatori_descriere.pdf">gladiatori_descriere</a>
-      </div><br>
-      <div class="wp-block-file">
-      <object class="wp-block-file__embed"
-         data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/programari_descriere.pdf"
-         type="application/pdf" x-init="window.addEventListener('resize', () => $el.style.display = window.innerWidth <= 768 ? 'none' : 'block')"
-     x-ref="content"
-     style="width:100%;height:600px"
-         aria-label="Embed of programari_descriere."></object>
-      <a class="download-link" id="wp-block-file--media-ba7ab712-7004-4e97-a003-1f256f5ebf59"
-         href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/programari_descriere.pdf">programari_descriere</a>
-      </div><br>
-      <div class="wp-block-file">
-      <object class="wp-block-file__embed"
-         data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/prefixe_descriere.pdf"
-         type="application/pdf" x-init="window.addEventListener('resize', () => $el.style.display = window.innerWidth <= 768 ? 'none' : 'block')"
-     x-ref="content"
-     style="width:100%;height:600px"
-         aria-label="Embed of prefixe_descriere."></object>
-      <a class="download-link" id="wp-block-file--media-7bb57ad7-67ea-4d08-ac40-e14ef1240a6e"
-         href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/prefixe_descriere.pdf">prefixe_descriere</a>
-      </div><br>
-      <div class="wp-block-file">
-      <object class="wp-block-file__embed"
-         data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/cursa_descriere.pdf"
-         type="application/pdf" x-init="window.addEventListener('resize', () => $el.style.display = window.innerWidth <= 768 ? 'none' : 'block')"
-     x-ref="content"
-     style="width:100%;height:600px"
-         aria-label="Embed of cursa_descriere."></object>
-      <a class="download-link" id="wp-block-file--media-6ade69c0-7f3a-4e80-8188-64f5580e309f"
-         href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/cursa_descriere.pdf">cursa_descriere</a>
-      </div><br>
-      <div class="wp-block-file">
-      <object class="wp-block-file__embed"
-         data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/inversiuni_descriere-1.pdf"
-         type="application/pdf" x-init="window.addEventListener('resize', () => $el.style.display = window.innerWidth <= 768 ? 'none' : 'block')"
-     x-ref="content"
-     style="width:100%;height:600px"
-         aria-label="Embed of inversiuni_descriere-1."></object>
-      <a class="download-link" id="wp-block-file--media-9930acdd-0d30-4705-96c3-79840273cec8"
-         href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/inversiuni_descriere-1.pdf">inversiuni_descriere-1</a>
-      </div><br>
-      </div>
-      <div x-show="selectedTab === 'rezultate1'" id="tabpanelrezultate1" role="tabpanel"
-         aria-label="rezultate1">
-      <h4>Rezultate ziua 1</h4>
+      
       </div>
       </div>
       </div>
       </div>
       </div>
+
       <div x-show="d7" id="cont">
          <div id="txt">
             <div x-data="{ selectedTab: 'probleme2' }" class="w-full">
@@ -427,98 +250,7 @@
                <div class="px-2 py-4 text-neutral-600 dark:text-neutral-400">
                   <div x-show="selectedTab === 'probleme2'" id="tabpanelprobleme2" role="tabpanel"
                      aria-label="probleme2">
-                     <div class="wp-block-file">
-                        <object class="wp-block-file__embed"
-                           data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/desc-sir.pdf"
-                           type="application/pdf" x-init="window.addEventListener('resize', () => $el.style.display = window.innerWidth <= 768 ? 'none' : 'block')"
-     x-ref="content"
-     style="width:100%;height:600px"
-                           aria-label="Embed of desc-sir."></object>
-                        <a class="download-link" id="wp-block-file--media-e5a371a3-6502-4baf-a0ca-5bac33e27afb"
-                           href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/desc-sir.pdf">desc-sir</a>
-                     </div>
-                     <br>
-                     <div class="wp-block-file">
-                        <object class="wp-block-file__embed"
-                           data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/desc-perfecte.pdf"
-                           type="application/pdf" x-init="window.addEventListener('resize', () => $el.style.display = window.innerWidth <= 768 ? 'none' : 'block')"
-     x-ref="content"
-     style="width:100%;height:600px"
-                           aria-label="Embed of desc-perfecte."></object>
-                        <a class="download-link" id="wp-block-file--media-78faa40e-e50a-43d2-8e30-72fa5abc8d09"
-                           href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/desc-perfecte.pdf">desc-perfecte</a>
-                     </div>
-                     <br>
-                     <div class="wp-block-file">
-                        <object class="wp-block-file__embed"
-                           data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/mozaic_descriere.pdf"
-                           type="application/pdf" x-init="window.addEventListener('resize', () => $el.style.display = window.innerWidth <= 768 ? 'none' : 'block')"
-     x-ref="content"
-     style="width:100%;height:600px"
-                           aria-label="Embed of mozaic_descriere."></object>
-                        <a class="download-link" id="wp-block-file--media-b851b7aa-cb50-4510-9a4a-3c0fba9fd529"
-                           href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/mozaic_descriere.pdf">mozaic_descriere</a>
-                     </div>
-                     <br>
-                     <div class="wp-block-file">
-                        <object class="wp-block-file__embed"
-                           data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/gladiatori_descriere.pdf"
-                           type="application/pdf" x-init="window.addEventListener('resize', () => $el.style.display = window.innerWidth <= 768 ? 'none' : 'block')"
-     x-ref="content"
-     style="width:100%;height:600px"
-                           aria-label="Embed of gladiatori_descriere."></object>
-                        <a class="download-link" id="wp-block-file--media-93e006ec-cbd8-42ac-985e-012c5f46221f"
-                           href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/gladiatori_descriere.pdf">gladiatori_descriere</a>
-                     </div>
-                     <br>
-                     <div class="wp-block-file">
-                        <object class="wp-block-file__embed"
-                           data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/programari_descriere.pdf"
-                           type="application/pdf" x-init="window.addEventListener('resize', () => $el.style.display = window.innerWidth <= 768 ? 'none' : 'block')"
-     x-ref="content"
-     style="width:100%;height:600px"
-                           aria-label="Embed of programari_descriere."></object>
-                        <a class="download-link" id="wp-block-file--media-ba7ab712-7004-4e97-a003-1f256f5ebf59"
-                           href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/programari_descriere.pdf">programari_descriere</a>
-                     </div>
-                     <br>
-                     <div class="wp-block-file">
-                        <object class="wp-block-file__embed"
-                           data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/prefixe_descriere.pdf"
-                           type="application/pdf" x-init="window.addEventListener('resize', () => $el.style.display = window.innerWidth <= 768 ? 'none' : 'block')"
-     x-ref="content"
-     style="width:100%;height:600px"
-                           aria-label="Embed of prefixe_descriere."></object>
-                        <a class="download-link" id="wp-block-file--media-7bb57ad7-67ea-4d08-ac40-e14ef1240a6e"
-                           href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/prefixe_descriere.pdf">prefixe_descriere</a>
-                     </div>
-                     <br>
-                     <div class="wp-block-file">
-                        <object class="wp-block-file__embed"
-                           data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/cursa_descriere.pdf"
-                           type="application/pdf" x-init="window.addEventListener('resize', () => $el.style.display = window.innerWidth <= 768 ? 'none' : 'block')"
-     x-ref="content"
-     style="width:100%;height:600px"
-                           aria-label="Embed of cursa_descriere."></object>
-                        <a class="download-link" id="wp-block-file--media-6ade69c0-7f3a-4e80-8188-64f5580e309f"
-                           href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/cursa_descriere.pdf">cursa_descriere</a>
-                     </div>
-                     <br>
-                     <div class="wp-block-file">
-                        <object class="wp-block-file__embed"
-                           data="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/inversiuni_descriere-1.pdf"
-                           type="application/pdf" x-init="window.addEventListener('resize', () => $el.style.display = window.innerWidth <= 768 ? 'none' : 'block')"
-     x-ref="content"
-     style="width:100%;height:600px"
-                           aria-label="Embed of inversiuni_descriere-1."></object>
-                        <a class="download-link" id="wp-block-file--media-9930acdd-0d30-4705-96c3-79840273cec8"
-                           href="https://infooltenia.cntv-edu.ro/wp-content/uploads/2023/02/inversiuni_descriere-1.pdf">inversiuni_descriere-1</a>
-                     </div>
-                     <br>
-                  </div>
-                  <div x-show="selectedTab === 'rezultate2'" id="tabpanelrezultate2" role="tabpanel"
-                     aria-label="rezultate2">
-                     <h4>Rezultate ziua 2</h4>
+                     
                   </div>
                </div>
             </div>
@@ -526,8 +258,6 @@
       </div>
       <div x-show="d8" id="cont">
          <div id="txt">
-            <h4>Sponsori</h4>
-            <p></p>
          </div>
       </div>
       
