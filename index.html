@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-      <script src="https://cdn.tailwindcss.com"></script>
-      <script src="https://cdn.jsdelivr.net/npm/kute.js@latest"></script>
-      <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
-      <title>InfoOltenia</title>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Domine">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee+Hairline">
-      <link rel="stylesheet" href="style.css">
 
-   </head>
-   <body x-transition:enter="
-      transition ease-out duration-300" 
-      x-data="
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+   <script src="https://cdn.tailwindcss.com"></script>
+   <script src="https://cdn.jsdelivr.net/npm/kute.js@latest"></script>
+   <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+   <title>InfoOltenia</title>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Domine">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee+Hairline">
+   <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body x-transition:enter="
+      transition ease-out duration-300" x-data="
       { 
         logo: true, d1: false, d2: false, d3: false, d4: false, d5: false, d6: false, d7: false, d8: false,
         sterge()
@@ -30,238 +31,267 @@
             this.d7 = false; 
             this.d8 = false;
         }
-      }" >
-      
-      <div id="blob">
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 320">
-            
-            <path id="blob1" stroke-width="1" fill="#497070" d="m-79 193 1496-88 23-105-1518-8z">
-            </path>
-         </svg>
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 320" style="visibility:hidden;">
-            <path id="blob2"  stroke-width="1" fill="#497070" d="m-78 105 1497 98 21-203-1518-8z">
-            </path>
-         </svg>
-         <script>
-            const tween = KUTE.fromTo(
-                '#blob1',
-                { path: '#blob1', strokeWidth: 3 },
-                { path: '#blob2', strokeWidth: 8 },
-                {
-                    repeat: 999,
-                    duration: 8000,
-                    yoyo: true,
-                    easing: 'easingCubicInOut'
-                }
-            );
-            tween.start();
-         </script>
-      </div>
-      <nav x-data="{ mobileMenuIsOpen: false }" @click.away="mobileMenuIsOpen = false"
-         class="flex items-center justify-between px-6 py-4" aria-label="penguin ui menu">
-         <a href="#" class = "titlu" @click="sterge(); logo=true;">
-            <div style="color: white;" id="info"><u style="color: white;"><span style="color: white;">
-               <img id="imgLogo" src="inflt.svg">
-            </div>
-         </a>
-         <div class = "meniu">
+      }">
+
+   <div id="blob">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 320">
+
+         <path id="blob1" stroke-width="1" fill="#497070" d="m-79 193 1496-88 23-105-1518-8z">
+         </path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 320" style="visibility:hidden;">
+         <path id="blob2" stroke-width="1" fill="#497070" d="m-78 105 1497 98 21-203-1518-8z">
+         </path>
+      </svg>
+      <script>
+         const tween = KUTE.fromTo(
+            '#blob1',
+            { path: '#blob1', strokeWidth: 3 },
+            { path: '#blob2', strokeWidth: 8 },
+            {
+               repeat: 999,
+               duration: 8000,
+               yoyo: true,
+               easing: 'easingCubicInOut'
+            }
+         );
+         tween.start();
+      </script>
+   </div>
+   <nav x-data="{ mobileMenuIsOpen: false }" @click.away="mobileMenuIsOpen = false"
+      class="flex items-center justify-between px-6 py-4" aria-label="penguin ui menu">
+      <a href="#" class="titlu" @click="sterge(); logo=true;">
+         <div style="color: white;" id="info"><u style="color: white;"><span style="color: white;">
+                  <img id="imgLogo" src="inflt.svg">
+         </div>
+      </a>
+      <div class="meniu">
          <ul class="hidden items-center gap-4 lg:flex">
             <li><a href="#"
-               class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
-               @click="sterge(); logo=true;">Prima paginǎ</a></li>
+                  class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
+                  @click="sterge(); logo=true;">Prima paginǎ</a></li>
             <li>
             <li><a href="#"
-               class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
-               @click="sterge(); d1=true;">Anunțuri</a></li>
+                  class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
+                  @click="sterge(); d1=true;">Anunțuri</a></li>
             <li><a href="#"
-               class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
-               @click="sterge(); d2=true;">Comisie</a></li>
+                  class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
+                  @click="sterge(); d2=true;">Comisie</a></li>
             <li><a href="#"
-               class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
-               @click="sterge(); d3=true;">Regulament</a></li>
+                  class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
+                  @click="sterge(); d3=true;">Regulament</a></li>
             <li><a href="#"
-               class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
-               @click="sterge(); d4=true;">Organizatori</a></li>
+                  class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
+                  @click="sterge(); d4=true;">Organizatori</a></li>
             <li><a href="#"
-               class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
-               @click="sterge(); d5=true;">Participanți</a></li>
+                  class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
+                  @click="sterge(); d5=true;">Participanți</a></li>
             <li><a href="#"
-               class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
-               @click="sterge(); d6=true;">Ziua 1</a></li>
+                  class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
+                  @click="sterge(); d6=true;">Ziua 1</a></li>
             <li><a href="#"
-               class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
-               @click="sterge(); d7=true;">Ziua 2</a></li>
+                  class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
+                  @click="sterge(); d7=true;">Ziua 2</a></li>
             <li><a href="#"
-               class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
-               @click="sterge(); d8=true;">Sponsori</a></li>
+                  class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
+                  @click="sterge(); d8=true;">Sponsori</a></li>
          </ul>
-        </div>
-         <button id="menu" style="" @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen" 
-            :class="mobileMenuIsOpen ? 'fixed top-6 right-6 z-20' : null" type="button"
-            class="flex text-white lg:hidden bg-[#497070] p-3 rounded" aria-label="mobile menu"
-            aria-controls="mobileMenu">
-            <svg x-cloak x-show="!mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="red" aria-hidden="true"
-               viewBox="0 0 24 24" stroke-width="2" stroke="#FFFFFF" class="size-10">
-               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-            <svg x-cloak x-show="mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="red" aria-hidden="true"
-               viewBox="0 0 24 24" stroke-width="2" stroke="#FFFFFF" class="size-10">
-               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-            </svg>
-         </button>
-         <ul x-cloak x-show="mobileMenuIsOpen"
-         style="background-color: #497070;
+      </div>
+      <button id="menu" style="" @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen"
+         :class="mobileMenuIsOpen ? 'fixed top-6 right-6 z-20' : null" type="button"
+         class="flex text-white lg:hidden bg-[#497070] p-3 rounded" aria-label="mobile menu" aria-controls="mobileMenu">
+         <svg x-cloak x-show="!mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="red" aria-hidden="true"
+            viewBox="0 0 24 24" stroke-width="2" stroke="#FFFFFF" class="size-10">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+         </svg>
+         <svg x-cloak x-show="mobileMenuIsOpen" xmlns="http://www.w3.org/2000/svg" fill="red" aria-hidden="true"
+            viewBox="0 0 24 24" stroke-width="2" stroke="#FFFFFF" class="size-10">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+         </svg>
+      </button>
+      <ul x-cloak x-show="mobileMenuIsOpen" style="background-color: #497070;
          border-radius: 16px;
          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
          backdrop-filter: blur(1px);
          -webkit-backdrop-filter: blur(2.7px);
          border: 1px solid rgba(255, 255, 255, 1);"
-            x-transition:enter="transition motion-reduce:transition-none ease-out duration-300"
-            x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0"
-            x-transition:leave="transition motion-reduce:transition-none ease-out duration-300"
-            x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full" id="mobileMenu"
-            class="fixed max-h-svh overflow-y-auto inset-x-0 top-0 z-10 flex flex-col divide-y divide-neutral-300 rounded-b-none bg-blue text-white px-6 pb-6 pt-20 lg:hidden">
-            <li @click="mobileMenuIsOpen = false; sterge(); logo = true;" class="py-4">
-               <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Prima paginǎ</a>
-            </li>
-            <li @click="mobileMenuIsOpen = false; sterge(); d1 = true;" class="py-4">
-               <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Anunțuri</a>
-            </li>
-            <li @click="mobileMenuIsOpen = false; sterge(); d2 = true;" class="py-4">
-               <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Comisie</a>
-            </li>
-            <li @click="mobileMenuIsOpen = false; sterge(); d3 = true;" class="py-4">
-               <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Regulament</a>
-            </li>
-            <li @click="mobileMenuIsOpen = false; sterge(); d4 = true;" class="py-4">
-               <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Organizatori</a>
-            </li>
-            <li @click="mobileMenuIsOpen = false; sterge(); d5 = true;" class="py-4">
-               <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Participanți</a>
-            </li>
-            <li @click="mobileMenuIsOpen = false; sterge(); d6 = true;" class="py-4">
-               <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Ziua 1</a>
-            </li>
-            <li @click="mobileMenuIsOpen = false; sterge(); d7 = true;" class="py-4">
-               <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Ziua 2</a>
-            </li>
-            <li @click="mobileMenuIsOpen = false; sterge(); d8 = true;" class="py-4">
-               <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Sponsori</a>
-            </li>
-         </ul>
-      </nav>
-      <div x-show="logo" id="cont">
-         <div id="txt">
-
-             
-            <center>
-               <h1>Bine ați venit pe pagina concursului InfoOltenia!</h1>
-               <span>
-                 <picture>
-                   <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.gif" alt="👋" width="40" height="40">
-                 </picture>
-               </span>
-             </center>
-             <p>
-               Colegiul Național "Frații Buzești" din Craiova are deosebita plăcere de a vă invita să participați la cea de-a XXV-a ediție a Concursului Interjudețean de Algoritmică și Programare <strong>InfoOltenia</strong>, care se va desfășura în perioada <strong>14-15</strong> februarie 2025.
-               <br><br>Acest eveniment de prestigiu reunește elevi pasionați de informatică din centrele partenere ale județelor Olteniei: <strong>Dolj, Gorj, Olt, Mehedinți și Vâlcea</strong>. Competiția este o oportunitate de a demonstra abilități remarcabile de gândire logică, creativitate și programare, într-un cadru academic de excelență.
-               <br><br>Ne dorim ca InfoOltenia 2025 să fie mai mult decât o simplă competiție. Este un prilej de a împărtăși idei, de a lega prietenii și de a descoperi bucuria de a progresa împreună, într-un spirit al performanței și al colaborării.
-               <br><br>Vă așteptăm cu entuziasm să facem din această ediție un moment memorabil pentru întreaga comunitate pasionată de informatică din regiunea Olteniei!
-               <br><br><strong>Mult succes tuturor participanților!</strong>
-
-             </p>
-     
-         </div>
-      </div>
-      <div x-show="d1" id="cont">
-         <div id="txt" style="
-            font-size: 20px;">
-            <p>
-               <div id="estomp">24 ianuarie 2025</div>
-               <ul>
-                  <li>🔔  1 februarie 2025, ora 23:59 - data limită pentru înscrierea participanților</li>
-                  <li>🔔  7 februarie 2025, ora 23:50 - data limită pentru anunțarea centrelor de concurs din fiecare județ</li>
-               </ul><br>
-            <div id="estomp">24 ianuarie 2025</div>
-            <ul>
-              <li>🔔 Site-ul InfoOltenia 2025 a fost publicat</li>
-            </ul><br>
-            <div id="estomp">7 februarie 2025</div>
-            <ul>
-              <li>🔔 12 februarie 2025 -sesiune de antrenament pe platforma kilonova.ro</li>
-            </ul>
-            </p>
-         </div>
-      </div>
-      <div x-show="d2" id="cont">
-         <div id="txt">
-            
-         </div>
-      </div>
-
-      <div x-show="d3" id="cont">
-         <div id="txt">
-            <iframe src="regulament.pdf" width="100%" height="800" style="border:none;"></iframe>
-         </div>
-      </div>
-
-      <div x-show="d4" id="cont">
-         <div id="txt">
-            
-         </div>
-      </div>
-      
-      <div x-show="d5" id="cont">
-         <div id="txt">
-            
-         </div>
-      </div>
-
-      <div x-show="d6" id="cont">
+         x-transition:enter="transition motion-reduce:transition-none ease-out duration-300"
+         x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0"
+         x-transition:leave="transition motion-reduce:transition-none ease-out duration-300"
+         x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full" id="mobileMenu"
+         class="fixed max-h-svh overflow-y-auto inset-x-0 top-0 z-10 flex flex-col divide-y divide-neutral-300 rounded-b-none bg-blue text-white px-6 pb-6 pt-20 lg:hidden">
+         <li @click="mobileMenuIsOpen = false; sterge(); logo = true;" class="py-4">
+            <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Prima paginǎ</a>
+         </li>
+         <li @click="mobileMenuIsOpen = false; sterge(); d1 = true;" class="py-4">
+            <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Anunțuri</a>
+         </li>
+         <li @click="mobileMenuIsOpen = false; sterge(); d2 = true;" class="py-4">
+            <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Comisie</a>
+         </li>
+         <li @click="mobileMenuIsOpen = false; sterge(); d3 = true;" class="py-4">
+            <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Regulament</a>
+         </li>
+         <li @click="mobileMenuIsOpen = false; sterge(); d4 = true;" class="py-4">
+            <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Organizatori</a>
+         </li>
+         <li @click="mobileMenuIsOpen = false; sterge(); d5 = true;" class="py-4">
+            <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Participanți</a>
+         </li>
+         <li @click="mobileMenuIsOpen = false; sterge(); d6 = true;" class="py-4">
+            <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Ziua 1</a>
+         </li>
+         <li @click="mobileMenuIsOpen = false; sterge(); d7 = true;" class="py-4">
+            <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Ziua 2</a>
+         </li>
+         <li @click="mobileMenuIsOpen = false; sterge(); d8 = true;" class="py-4">
+            <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Sponsori</a>
+         </li>
+      </ul>
+   </nav>
+   <div x-show="logo" id="cont">
       <div id="txt">
-      <div x-data="{ selectedTab: 'probleme1' }" class="w-full">
-      <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()"
-         class="flex gap-2 overflow-x-auto border-b border-neutral-300 dark:border-neutral-700"
-         role="tablist" aria-label="tab options">
-      <button @click="selectedTab = 'probleme1'" :aria-selected="selectedTab === 'probleme1'"
-         :tabindex="selectedTab === 'probleme1' ? '0' : '-1'" id="select">Probleme</button>
-      <button @click="selectedTab = 'rezultate1'" :aria-selected="selectedTab === 'rezultate1'"
-         :tabindex="selectedTab === 'rezultate1' ? '0' : '-1'" id="select">Rezultate</button>
-      </div>
-      <div class="px-2 py-4 text-neutral-600 dark:text-neutral-400">
-      <div x-show="selectedTab === 'probleme1'" id="tabpanelprobleme1" role="tabpanel"
-         aria-label="probleme1">
-      
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
 
-      <div x-show="d7" id="cont">
-         <div id="txt">
-            <div x-data="{ selectedTab: 'probleme2' }" class="w-full">
-               <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()"
-                  class="flex gap-2 overflow-x-auto border-b border-neutral-300 dark:border-neutral-700"
-                  role="tablist" aria-label="tab options">
-                  <button @click="selectedTab = 'probleme2'" :aria-selected="selectedTab === 'probleme2'"
-                     :tabindex="selectedTab === 'probleme2' ? '0' : '-1'">Probleme</button>
-                  <button @click="selectedTab = 'rezultate2'" :aria-selected="selectedTab === 'rezultate2'"
-                     :tabindex="selectedTab === 'rezultate2' ? '0' : '-1'">Rezultate</button>
+
+         <center>
+            <h1>Bine ați venit pe pagina concursului InfoOltenia!</h1>
+            <span>
+               <picture>
+                  <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.gif" alt="👋" width="40"
+                     height="40">
+               </picture>
+            </span>
+         </center>
+         <p>
+            Colegiul Național "Frații Buzești" din Craiova are deosebita plăcere de a vă invita să participați la cea
+            de-a XXV-a ediție a Concursului Interjudețean de Algoritmică și Programare <strong>InfoOltenia</strong>,
+            care se va desfășura în perioada <strong>14-15</strong> februarie 2025.
+            <br><br>Ediția din acest an a competiției este organizată cu sprijinul <strong>Centrului de Pregătire pentru
+               Performanță în Informatică</strong>, un partener de excepție în susținerea performanței educaționale în
+            domeniul informaticii.
+            <br><br>Acest eveniment de prestigiu reunește elevi pasionați de informatică din centrele partenere ale
+            județelor Olteniei: <strong>Dolj, Gorj, Olt, Mehedinți și Vâlcea</strong>. Competiția este o oportunitate de
+            a demonstra abilități remarcabile de gândire logică, creativitate și programare, într-un cadru academic de
+            excelență.
+            <br><br>Ne dorim ca InfoOltenia 2025 să fie mai mult decât o simplă competiție. Este un prilej de a
+            împărtăși idei, de a lega prietenii și de a descoperi bucuria de a progresa împreună, într-un spirit al
+            performanței și al colaborării.
+            <br><br>Vă așteptăm cu entuziasm să facem din această ediție un moment memorabil pentru întreaga comunitate
+            pasionată de informatică din regiunea Olteniei!
+            <br><br><strong>Mult succes tuturor participanților!</strong>
+
+         </p>
+
+      </div>
+   </div>
+   <div x-show="d1" id="cont">
+      <div id="txt" style="
+            font-size: 20px;">
+         <p>
+         <div id="estomp">24 ianuarie 2025</div>
+         <ul>
+            <li>🔔 1 februarie 2025, ora 23:59 - data limită pentru înscrierea participanților</li>
+            <li>🔔 7 februarie 2025, ora 23:50 - data limită pentru anunțarea centrelor de concurs din fiecare județ
+            </li>
+         </ul><br>
+         <div id="estomp">24 ianuarie 2025</div>
+         <ul>
+            <li>🔔 Site-ul InfoOltenia 2025 a fost publicat</li>
+         </ul><br>
+         <div id="estomp">7 februarie 2025</div>
+         <ul>
+            <li>🔔 12 februarie 2025 -sesiune de antrenament pe platforma kilonova.ro</li>
+         </ul>
+         </p>
+      </div>
+   </div>
+   <div x-show="d2" id="cont">
+      <div id="txt">
+
+      </div>
+   </div>
+
+   <div x-show="d3" id="cont">
+      <div id="txt">
+         <iframe src="regulament.pdf" width="100%" height="800" style="border:none;"></iframe>
+      </div>
+   </div>
+
+   <div x-show="d4" id="cont">
+      <div id="txt">
+
+      </div>
+   </div>
+
+   <div x-show="d5" id="cont">
+      <div id="txt">
+         <div x-data="{ selectedTab: 'individuala' }" class="w-full">
+            <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()"
+               class="flex gap-2 overflow-x-auto border-b border-neutral-300 dark:border-neutral-700" role="tablist"
+               aria-label="tab options">
+               <button @click="selectedTab = 'individuala'" :aria-selected="selectedTab === 'probleme1'"
+                  :tabindex="selectedTab === 'individuala' ? '0' : '-1'" id="select">Proba pe echipe</button>
+               <button @click="selectedTab = 'echipe'" :aria-selected="selectedTab === 'rezultate1'"
+                  :tabindex="selectedTab === 'echipe' ? '0' : '-1'" id="select">Proba individualǎ</button>
+            </div>
+            <div class="px-2 py-4 text-neutral-600 dark:text-neutral-400">
+               <div x-show="selectedTab === 'individuala'" id="tabpanelprobleme1" role="tabpanel" aria-label="probleme1">
+                  <p>Proba pe echipe</p>
+                  <iframe src="echipe.pdf" width="100%" height="800" style="border:none;"></iframe>
                </div>
-               <div class="px-2 py-4 text-neutral-600 dark:text-neutral-400">
-                  <div x-show="selectedTab === 'probleme2'" id="tabpanelprobleme2" role="tabpanel"
-                     aria-label="probleme2">
-                     
-                  </div>
+               <div x-show="selectedTab === 'echipe'" id="tabpanelprobleme1" role="tabpanel" aria-label="probleme1">
+                  <p>Proba individuala</p>
+                  <iframe src="individuala.pdf" width="100%" height="800" style="border:none;"></iframe>
                </div>
             </div>
          </div>
       </div>
-      <div x-show="d8" id="cont">
-         <div id="txt">
+   </div>
+
+   <div x-show="d6" id="cont">
+      <div id="txt">
+         <div x-data="{ selectedTab: 'probleme1' }" class="w-full">
+            <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()"
+               class="flex gap-2 overflow-x-auto border-b border-neutral-300 dark:border-neutral-700" role="tablist"
+               aria-label="tab options">
+               <button @click="selectedTab = 'probleme1'" :aria-selected="selectedTab === 'probleme1'"
+                  :tabindex="selectedTab === 'probleme1' ? '0' : '-1'" id="select">Probleme</button>
+               <button @click="selectedTab = 'rezultate1'" :aria-selected="selectedTab === 'rezultate1'"
+                  :tabindex="selectedTab === 'rezultate1' ? '0' : '-1'" id="select">Rezultate</button>
+            </div>
+            <div class="px-2 py-4 text-neutral-600 dark:text-neutral-400">
+               <div x-show="selectedTab === 'probleme1'" id="tabpanelprobleme1" role="tabpanel" aria-label="probleme1">
+
+               </div>
+            </div>
          </div>
       </div>
-      
-   </body>
+   </div>
+
+   <div x-show="d7" id="cont">
+      <div id="txt">
+         <div x-data="{ selectedTab: 'probleme2' }" class="w-full">
+            <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()"
+               class="flex gap-2 overflow-x-auto border-b border-neutral-300 dark:border-neutral-700" role="tablist"
+               aria-label="tab options">
+               <button @click="selectedTab = 'probleme2'" :aria-selected="selectedTab === 'probleme2'"
+                  :tabindex="selectedTab === 'probleme2' ? '0' : '-1'">Probleme</button>
+               <button @click="selectedTab = 'rezultate2'" :aria-selected="selectedTab === 'rezultate2'"
+                  :tabindex="selectedTab === 'rezultate2' ? '0' : '-1'">Rezultate</button>
+            </div>
+            <div class="px-2 py-4 text-neutral-600 dark:text-neutral-400">
+               <div x-show="selectedTab === 'probleme2'" id="tabpanelprobleme2" role="tabpanel" aria-label="probleme2">
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div x-show="d8" id="cont">
+      <div id="txt">
+      </div>
+   </div>
+
+</body>
+
 </html>
