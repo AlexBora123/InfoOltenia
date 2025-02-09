@@ -213,7 +213,7 @@
 
    <div x-show="d3" id="cont">
       <div id="txt">
-         <iframe src="regulament.pdf" width="100%" height="800" style="border:none;"></iframe>
+         <iframe id = "scroll-wrapper" src="regulament.pdf" width="100%" height="800" style="border:none;"></iframe>
       </div>
    </div>
 
@@ -237,11 +237,11 @@
             <div class="px-2 py-4 text-neutral-600 dark:text-neutral-400">
                <div x-show="selectedTab === 'individuala'" id="tabpanelprobleme1" role="tabpanel" aria-label="probleme1">
                   <p>Proba pe echipe</p>
-                  <iframe src="echipe.pdf" width="100%" height="800" style="border:none;"></iframe>
+                  <iframe id = "scroll-wrapper" src="echipe.pdf" width="100%" height="800" style="border:none;"></iframe>
                </div>
                <div x-show="selectedTab === 'echipe'" id="tabpanelprobleme1" role="tabpanel" aria-label="probleme1">
                   <p>Proba individuala</p>
-                  <iframe src="individuala.pdf" width="100%" height="800" style="border:none;"></iframe>
+                  <iframe id = "scroll-wrapper" src="individuala.pdf" width="100%" height="800" style="border:none;"></iframe>
                </div>
             </div>
          </div>

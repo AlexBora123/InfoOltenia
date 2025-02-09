@@ -2,6 +2,11 @@
     color: #6e7b76;
 }
 
+#scroll-wrapper {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+}
+
 body {
     margin: 0;
     padding: 0;
