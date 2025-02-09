@@ -3,8 +3,8 @@
 }
 
 #scroll-wrapper {
-    -webkit-overflow-scrolling: touch;
-    overflow-y: scroll;
+    height: 100vh;
+    overflow: scroll;
 }
 
 body {
