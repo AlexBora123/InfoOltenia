@@ -199,6 +199,11 @@ button:active {
         background-color: transparent;
         color: black;
     }
+    #scroll-wrapper {
+        width: 80vw;
+        height: 100vh;
+        overflow: scroll;
+    }
 }
 nav ul {
     display: flex;
