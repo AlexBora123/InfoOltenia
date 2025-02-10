@@ -95,7 +95,7 @@
                   @click="sterge(); d7=true;">Ziua 2</a></li>
             <li><a href="#"
                   class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
-                  @click="sterge(); d8=true;">Sponsori</a></li>
+                  @click="sterge(); d8=true;">Parteneri</a></li>
          </ul>
       </div>
       <button id="menu" style="" @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen"
@@ -289,8 +289,16 @@
       </div>
    </div>
    <div x-show="d8" id="cont">
-      <div id="txt">
-      </div>
+      <div class="sponsors-grid">
+         <div class="sponsor-item">
+           <span class="sponsor-name">Syncro Soft</span>
+           <img src="sync.png" alt="Syncro Soft logo" class="sponsor-logo">
+         </div>
+         <div class="sponsor-item">
+           <span class="sponsor-name">Kilonova</span>
+           <img src="kilo.jpeg" alt="Kilonova logo" class="sponsor-logo">
+         </div>
+       </div>
    </div>
 
 </body>
