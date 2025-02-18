@@ -16,10 +16,14 @@
 
 </head>
 
+<style>
+
+</style>
+
 <body x-transition:enter="
       transition ease-out duration-300" x-data="
       { 
-        logo: true, d1: false, d2: false, d3: false, d4: false, d5: false, d6: false, d7: false, d8: false,
+        logo: true, d1: false, d2: false, d3: false, d4: false, d5: false, d6: false, d7: false, d8: false, d9: false,
         sterge()
         {
             this.logo = false;
@@ -31,6 +35,7 @@
             this.d6 = false; 
             this.d7 = false; 
             this.d8 = false;
+            this.d9 = false;
         }
       }">
 
@@ -96,6 +101,9 @@
             <li><a href="#"
                   class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
                   @click="sterge(); d8=true;">Parteneri</a></li>
+            <li><a href="#"
+                  class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
+                  @click="sterge(); d9=true;">Galerie foto</a></li>
          </ul>
       </div>
       <button id="menu" style="" @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen"
@@ -147,6 +155,9 @@
          </li>
          <li @click="mobileMenuIsOpen = false; sterge(); d8 = true;" class="py-4">
             <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Parteneri</a>
+         </li>
+         <li @click="mobileMenuIsOpen = false; sterge(); d9 = true;" class="py-4">
+            <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Galerie foto</a>
          </li>
       </ul>
    </nav>
@@ -381,6 +392,50 @@
          </div>
        </div>
    </div>
+   <script>
+      document.addEventListener('alpine:init', () => {
+        Alpine.data('gallery', () => ({
+          hoveredIndex: null,
+          photos: [
+            { src: 'Buzesti1.jpeg', alt: 'Craiova - CN Frații Buzeşti' },
+            { src: 'Buzesti2.jpeg', alt: 'Craiova - CN Frații Buzeşti' },
+            { src: 'Buzesti3.jpeg', alt: 'Craiova - CN Frații Buzeşti' },
+            { src: 'Buzesti4.jpeg', alt: 'Craiova - CN Frații Buzeşti' },
+            { src: 'Buzesti5.jpg', alt: 'Craiova - CN Frații Buzeşti' },
+            { src: 'Buzesti6.jpg', alt: 'Craiova - CN Frații Buzeşti' },
+            { src: 'Buzesti7.jpg', alt: 'Craiova - CN Frații Buzeşti' },
+            { src: 'Buzesti8.jpg', alt: 'Craiova - CN Frații Buzeşti' },
+            { src: 'Buzesti9.jpg', alt: 'Craiova - CN Frații Buzeşti' },
+            { src: 'Buzesti10.jpeg', alt: 'Craiova - CN Frații Buzeşti' },
+            { src: 'Severin- CN Traian.jpeg', alt: 'Severin - CN Traian' },
+            { src: 'Slatina- CN Radu Greceanu.jpeg', alt: 'Slatina - CN Radu Greceanu' },
+            { src: 'Slatina-CN Radu Greceanu2.jpeg', alt: 'Slatina - CN Radu Greceanu' },
+            { src: 'Tg Jiu- Tudor Vladimirescu.jpeg', alt: 'Tg Jiu - Tudor Vladimirescu' },
+            { src: 'Vâlcea-CN Mircea cel Batran.jpeg', alt: 'Vâlcea - CN Mircea cel Batran' },
+            { src: 'Vâlcea-CNI Matei Basarab1.jpeg', alt: 'Vâlcea - CNI Matei Basarab' },
+            { src: 'Vîlcea- CNI Matei Basarab2.jpeg', alt: 'Vâlcea - CNI Matei Basarab' },
+          ],
+        }));
+      });
+    </script>
+    
+    <div x-show="d9" id="cont">
+      <div x-data="gallery" class="gallery">
+        <template x-for="(photo, index) in photos" :key="index">
+          <div
+            class="photo"
+            @mouseenter="hoveredIndex = index"
+            @mouseleave="hoveredIndex = null"
+            :class="{ 'photo-hovered': hoveredIndex === index }"
+          >
+            <img :src="photo.src" :alt="photo.alt">
+            <!-- Add a div to display the alt text -->
+            <div class="alt-text" x-text="photo.alt"></div>
+            <div class="connections" x-show="hoveredIndex === index"></div>
+          </div>
+        </template>
+      </div>
+    </div>
 
 </body>
 
