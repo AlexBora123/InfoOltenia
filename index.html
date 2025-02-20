@@ -23,7 +23,7 @@
 <body x-transition:enter="
       transition ease-out duration-300" x-data="
       { 
-        logo: true, d1: false, d2: false, d3: false, d4: false, d5: false, d6: false, d7: false, d8: false, d9: false,
+        logo: true, d1: false, d2: false, d3: false, d4: false, d5: false, d6: false, d7: false, d8: false, d9: false, d10: false,
         sterge()
         {
             this.logo = false;
@@ -36,6 +36,7 @@
             this.d7 = false; 
             this.d8 = false;
             this.d9 = false;
+            this.d10 = false;
         }
       }">
 
@@ -99,6 +100,9 @@
                   class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
                   @click="sterge(); d7=true;">Ziua 2</a></li>
             <li><a href="#"
+                     class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
+                     @click="sterge(); d10=true;">Premii</a></li>
+            <li><a href="#"
                   class="font-bold  underline-offset-2 hover: focus:outline-none focus:underline dark: dark:hover:"
                   @click="sterge(); d8=true;">Parteneri</a></li>
             <li><a href="#"
@@ -153,12 +157,16 @@
          <li @click="mobileMenuIsOpen = false; sterge(); d7 = true;" class="py-4">
             <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Ziua 2</a>
          </li>
+         <li @click="mobileMenuIsOpen = false; sterge(); d10 = true;" class="py-4">
+            <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Premii</a>
+         </li>
          <li @click="mobileMenuIsOpen = false; sterge(); d8 = true;" class="py-4">
             <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Parteneri</a>
          </li>
          <li @click="mobileMenuIsOpen = false; sterge(); d9 = true;" class="py-4">
             <a href="#" class="w-full text-lg font-bold focus:underline" aria-current="page">Galerie foto</a>
          </li>
+
       </ul>
    </nav>
    <div x-show="logo" id="cont">
@@ -430,7 +438,6 @@
             :class="{ 'photo-hovered': hoveredIndex === index }"
           >
             <img :src="photo.src" :alt="photo.alt">
-            <!-- Add a div to display the alt text -->
             <div class="alt-text" x-text="photo.alt"></div>
             <div class="connections" x-show="hoveredIndex === index"></div>
           </div>
@@ -438,6 +445,37 @@
       </div>
     </div>
 
+    <div x-show="d10" id="cont">
+      <div id="txt">
+         <div x-data="{ selectedTab: 'probleme2' }" class="w-full">
+            <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()"
+               class="flex gap-2 overflow-x-auto border-b border-neutral-300 dark:border-neutral-700" role="tablist"
+               aria-label="tab options">
+               <button @click="selectedTab = 'probleme2'" :aria-selected="selectedTab === 'probleme2'"
+                  :tabindex="selectedTab === 'probleme2' ? '0' : '-1'">Gimnaziu</button>
+               <button @click="selectedTab = 'rezultate2'" :aria-selected="selectedTab === 'rezultate2'"
+                  :tabindex="selectedTab === 'rezultate2' ? '0' : '-1'">Liceu</button>
+               <button @click="selectedTab = 'rezultate3'" :aria-selected="selectedTab === 'rezultate3'"
+                  :tabindex="selectedTab === 'rezultate3' ? '0' : '-1'">Echipe</button>
+            </div>
+            <div class="px-2 py-4 text-neutral-600 dark:text-neutral-400">
+               <div x-show="selectedTab === 'probleme2'" id="tabpanelprobleme2" role="tabpanel" aria-label="probleme2">
+                  <a href="premii_gimnaziu.pdf"><i class="fa fa-file" style="font-size:24px"></i>premiile probei pentru gimnaziu</a>
+                  <iframe id = "scroll-wrapper" src="premii_gimnaziu.pdf" width="auto" height="800" style="border:none;"></iframe>
+               </div>
+               <div x-show="selectedTab === 'rezultate2'" id="tabpanelprobleme2" role="tabpanel" aria-label="probleme2">
+                  <a href="premii_liceu.pdf"><i class="fa fa-file" style="font-size:24px"></i>premiile probei pentru liceu</a>
+                  <iframe id = "scroll-wrapper" src="premii_liceu.pdf" width="auto" height="800" style="border:none;"></iframe>
+               </div>
+               <div x-show="selectedTab === 'rezultate3'" id="tabpanelprobleme2" role="tabpanel" aria-label="probleme2">
+                  <a href="premii_echipe.pdf"><i class="fa fa-file" style="font-size:24px"></i>premiile probei pe echipe</a>
+                  <iframe id = "scroll-wrapper" src="premii_echipe.pdf" width="auto" height="800" style="border:none;"></iframe>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+    
 </body>
 
 </html>
